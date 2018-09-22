@@ -1,0 +1,118 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletNuevaInterfaz
+ */
+// TODO MODIFICAR
+@WebServlet(urlPatterns= {"/clientes/nuevaInterfaz", "/admin/nuevaInterfaz"})//Asterisco necesario?!!
+public class ServletNuevaInterfaz extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletNuevaInterfaz() {
+        super();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	 //Este servlet es accedido a través de la página verCrearInterfaces.jsp, de la que recibe los datos del
+   //formulario, con los nombres: equipo, tipo e interfaz.
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean error = false;
+		try {
+			//request contiene la información del formulario de verCrearInterfaces.jsp, tipo, interfaz y equipo
+			Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");//Hallamos el objeto usuario asociado a la sesión, contexto de sesion
+			DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");//Hallamos el objeto ds del contexto de la Aplicación, getServletContext hace referencia a la aplicación
+			Connection conn = ds.getConnection();//Contexto de petición
+			String tipo = request.getParameter("tipo");
+			String interfaz = request.getParameter("interfaz");
+			String equipo = request.getParameter("equipo");
+			// Comprobar parámetros
+			if (tipo == null || equipo == null || interfaz == null//Si hay algún campo vacío saltará un error(error True)
+					|| tipo.isEmpty() || equipo.isEmpty() || interfaz.isEmpty()) {
+				// Error comprobación datos
+				error = true;
+			} else {//Si los campos no están vacíos
+				boolean usuCorrecto = false;//creamos la variable
+				//Obtener si el equipo es del usuario o es administrador
+				if (usuario.getTipo_usu()==Usuario.ADMINISTRADOR) {//Si el usuario es Administrador...
+					usuCorrecto = true;//si es admin el usuario es correcto
+				} else {//Comprueba que el equipo es del usuario autenticado aunque no sea adminsitrador
+					String sql = "SELECT id_usuario FROM equipos "
+							+ "WHERE id_usuario=? AND id_eq=?";
+					PreparedStatement pst = conn.prepareStatement(sql);
+					pst.setString(1, usuario.getUsu());
+					pst.setString(2, equipo);
+					ResultSet rs = pst.executeQuery();//executeQuery es para obtener información de la tabla, no modificar!
+					if (rs.next()) {//Si existe en la tabla algun elemento cuyo usuario sea el usuario de la sesión y el equipo el equipo introducido en el form entonces usuarioCorrecto ok!
+						usuCorrecto = true;
+					}
+					rs.close();
+					pst.close();
+				}
+				if (usuCorrecto) {//Sólo entra aqui si es admin ó el equipo es del usuario autenticado
+					// Realizar la operación
+					String sql = "INSERT INTO interfaces VALUES (?,?,?)";
+					PreparedStatement st = conn.prepareStatement(sql);
+					st.setString(1, equipo);
+					st.setInt(2, Integer.parseInt(interfaz));
+					st.setInt(3, Integer.parseInt(tipo));
+					int rows = st.executeUpdate();//¿Qué devuelve? número de filas afectadas, el executeUpdate es para modificar la tabla
+					if (rows == 1) {
+						//Correcto.
+					} else {//Si modifica 0 o más de una fila está mal, por qué? ¿Que pasa si la interfaz ya existe?
+						error = true;
+						//Error
+					}
+					st.close();
+					conn.close();
+				} else {//Si usuCorrecto==false
+					error = true;
+				}
+			}////////////////////////****
+		} catch (Exception e) {
+			//Error
+			e.printStackTrace();
+			error = true;
+		}
+
+		if (error) {
+			// TODO MODIFICAR--Modificado
+			request.setAttribute("mensaje", "Error creando la nueva interfaz.");
+			request.setAttribute("volverURL", "/clientes/verCrearInterfaces.jsp");//url Correcta¿?***
+			request.getRequestDispatcher("/clientes/error.jsp").forward(request, response);//url correcta¿?***
+		} else {//Si todo es correcto (error==false) y se crea la interfaz correctamente, debe redirigir el navegador a la página de
+						//“Ver/crear Interfaces”.
+							request.getRequestDispatcher("/clientes/verCrearInterfaces.jsp").forward(request, response);//OK??
+
+			// TODO COMPLETAR--Modificado...only that?
+
+		}
+
+
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

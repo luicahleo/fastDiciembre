@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplos borrar e insertar</title>
+</head>
+<body>
+  <h1>Ejemplos borrar e insertar</h1>
+  <article>
+    <h2>Cabecera de artículo</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, expedita culpa officiis laborum odio quam. Aliquid iure numquam, excepturi, odio error neque illo quod soluta.</p>
+    <p>Sunt id numquam quibusdam unde, expedita quos repellat, laudantium necessitatibus quisquam aut, soluta! Repellat minus delectus facilis quis aspernatur, fuga commodi, dignissimos earum dolore nostrum!</p>
+    <ul>
+      <li>Lorem ipsum.</li>
+      <li>Rerum, enim.</li>
+      <li>Accusamus, atque?</li>
+    </ul>
+  </article>
+  <script>
+  "use strict";
+  alert("Borramos 1er párrafo del artículo");
+  var p = document.querySelector("article p");
+  p.parentNode.removeChild(p);
+
+  alert("Añadimos li")
+  var li = document.createElement("li");
+  li.textContent = "nuevo li añadido desde JS";
+  var lista = document.querySelector("article ul");
+  lista.appendChild(li);
+
+  alert("Añadimos li el primero")
+  var li = document.createElement("li");
+  li.textContent = "otro nuevo li añadido desde JS";
+  var lista = document.querySelector("article ul");
+  // no es lo mismo firstElementChild que firstChild
+  // similar a diferencia entre childNodes y Children
+  console.log(lista, lista.firstElementChild, li);
+  lista.insertBefore(li, lista.firstElementChild);
+  </script>
+</body>
+</html>

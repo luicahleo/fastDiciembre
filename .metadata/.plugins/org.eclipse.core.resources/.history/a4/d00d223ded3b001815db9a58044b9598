@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8" />
+ <title>Prueba de HTML y CGI</title>
+</head>
+<body>
+ <p><a href="/AppWeb/cgi-bin/ejemplo-cgi-1.cgi"> /AppWeb/cgi-bin/ejemplo-cgi-1.cgi</a>
+ (tiene extensión cgi pero es el ejecutable de WEB-INF/cgi/sources/ejemplo-cgi-1.c)</p>
+ <p><a href="/AppWeb/cgi-bin/ejemplo-cgi-1.py">  /AppWeb/cgi-bin/ejemplo-cgi-1.py</a></p>
+ <p><a href="/AppWeb/cgi-bin/ejemplo-cgi-1.sh">  /AppWeb/cgi-bin/ejemplo-cgi-1.sh</a></p>
+  <p><a href="/AppWeb/cgi-bin/ejemplo-cgi-1.c">  /AppWeb/cgi-bin/ejemplo-cgi-1.c</a></p>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+function avisa(seg)
+{
+  timer=setInterval(function(){alert("Ha esperado " + seg + " segundos.")},seg*1000);
+}
+function parar()
+{
+clearInterval(timer);
+}
+</script>
+</head>
+<body>
+
+<p>Haga clic sobre el botón y espere...</p>
+<button onclick="avisa(2)">¡Arranca!</button>
+
+<p>Si está desesperado...</p>
+<button onclick="parar()">¡Para!</button>
+
+</body>
+</html> 

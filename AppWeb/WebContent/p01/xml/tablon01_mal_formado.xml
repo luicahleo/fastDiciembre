@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD asociada -->
+<!DOCTYPE tablon SYSTEM "tablon01.dtd"> 
+
+<!-- Hoja de estilos asociada 
+<?xml-stylesheet type="text/css" href="tablon01.css"?> -->
+
+<tablon>
+	<anuncio codigo="A000" vendido="no">
+		<fecha> 22/09/2014</fecha>
+		<asunto> Vendo bicicleta </asunto>
+		<texto> 2 años, cambios en buen estado</texto>
+		<precio moneda_pago="eur"> 500 euros</precio>
+		<contacto visible="si"> 95 456 456 </contacto>
+	</Anuncio>
+	<anuncio codigo=A001 vendido="no">
+		<fecha> 22/09/2011 </fecha>
+		<asunto> Vendo moto 
+		<texto> buena, bonita, barata</texto>
+		<precio moneda_pago="eur"> 500 euros</precio>
+		<contacto visible="si"> 666 123 123  </contacto>
+	</anuncio>
+	<anuncio codigo="A002" vendido="si">
+		<fecha> 24/09/2011 </fecha>
+		<asunto> Vendo bici</asunto>
+		<texto> muy bonita, con candado</texto>
+		<precio> 90 euros</precio>
+		<contacto visible="no"> a@ese.com </contacto>
+		</anuncio>
+</Tablon>

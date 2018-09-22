@@ -1,0 +1,116 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletModificarIp
+ */
+//TODO MODIFICAR-->Added
+
+@WebServlet("/admin/modificarIp")//Added
+
+public class ServletModificarIp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+		// private boolean checkGw(String ip,int mask,String gw) {//whats it's suppossed to do?
+
+		
+
+    public ServletModificarIp() {
+        super();
+
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean error = false;
+		String interfaz = request.getParameter("interfaz");
+		String equipo = request.getParameter("equipo");
+		String ip = request.getParameter("ip");
+		String mask = request.getParameter("mask");
+		String gw = request.getParameter("gw");
+
+		try {
+			DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");//consigo el atributo de la base de datos
+			Connection conn = ds.getConnection();
+
+
+			// Comprobar parámetros, compueba que no está vacío
+			if (ip == null || equipo == null || interfaz == null
+				|| gw == null || mask == null
+				|| ip.isEmpty() || equipo.isEmpty() || interfaz.isEmpty()
+				|| mask.isEmpty() || gw.isEmpty()
+				|| !OperacionesIP.checkGw(ip, mask, gw)) {
+				// Error comprobación datos
+				error = true;//si alguno de estas condiciones se cumple, habrá error
+			} else {//Si todas las condiciones son correctas
+
+				// Realizar la operación
+				// TODO MODIFICAR--->Modificado
+				String sql = "INSERT INTO direcciones_ip (ip, masc, ip_gw, id_eq, num_in) VALUES (?,?,?,?,?)";//funcionaria!!?
+				PreparedStatement st = conn.prepareStatement(sql);
+				st.setString(1, ip);
+				st.setInt(2, Integer.parseInt(mask));
+				st.setString(3, gw);
+				st.setString(4, equipo);
+				st.setInt(5, Integer.parseInt(interfaz));
+
+				int rows = st.executeUpdate();//para modificar la tabla
+				if (rows == 1) {
+					//Correcto.
+				} else {
+
+					error = true;
+					//Error
+				}
+				st.close();
+				conn.close();
+			}
+		} catch (Exception e) {
+			//Error
+			e.printStackTrace();
+			error = true;
+		}
+
+		if (error) {//Si hay algún error debe reenviar la petición a la página de error (error.jsp), estableciendo previamente
+                //dos atributos de petición de nombres “mensaje” y “volverURL”.
+			// TODO MODIFICAR; modificado
+			//String id_eq = request.getParameter("id_eq");//Consigue los parametero de id_eq del formulario de formIp
+			//String num_in = request.getParameter("num_id");//Consigue el parametro de num_in del formulario de formIp
+			 request.setAttribute("mensaje", "Error asignando la nueva IP");
+			 request.setAttribute("volverURL", "ipForm.jsp?id_eq=" + equipo + "&num_in=" + interfaz);//El valor de volverURL...
+			request.getRequestDispatcher("../clientes/error.jsp").forward(request, response);
+		} else {//Si todo es correcto y la asignación se efectúa correctamente, debe redirigir el navegador a la página de
+            //“Asignar direcciones IP” (donde se ven las interfaces sin asignación de IP).
+
+			// TODO COMPLETAR--->>Completado
+			request.getRequestDispatcher("/admin/asigIpIntSinAsignar.jsp").forward(request, response);//Con la carpeta admin o sin carpeta?!!!
+
+
+		}
+
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

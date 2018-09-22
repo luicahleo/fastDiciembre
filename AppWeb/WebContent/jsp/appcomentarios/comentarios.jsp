@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%--/*FJFJ*/--%>
+<%--Realmente, no es necesario que esto sea una página JSP. Se puede convertir en HTML--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Comentarios de Aplicación</title>
+<link href="../estilo.css" rel="stylesheet" type="text/css"/>
+<link href="comentarios.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" language="javascript" src="comentarios.js"></script>
+</head>
+<body onload="iniciarSondeo()">
+	<div id="titulo">
+		<h1>
+			<img id="cargando" src="cargando.gif" alt="cargando" width="40px" />
+			Comentarios
+		</h1>
+	</div>
+	<div id="resultadoEnvio">
+			<p class="info">Envío correcto</p>
+	</div>
+	<div id="divform">
+		<h2>Enviar nuevo comentario</h2>
+		<form id="datos" accept-charset="UTF-8">
+			<label for="autor">Autor: </label> <br />
+			<input type="text" name="autor" id="autor" /><br />
+			<label for="texto">Comentario: </label><br />
+			<input type="text" name="texto" id="texto" /><br />
+			<input type="button" id="boton" value="Enviar"/>
+		</form>
+		
+	</div>
+	<div id="cuerpo">
+		<h2>Comentarios (<span id="total">0</span>)</h2>
+		<div id="comentarios">
+		
+		</div>
+	</div>
+</body>
+</html>

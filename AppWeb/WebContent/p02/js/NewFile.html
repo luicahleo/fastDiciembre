@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+function f1() {
+var x = document.querySelectorAll("[id]");
+x[0].style.backgroundColor = "red";
+x[1].style.backgroundColor = "yellow";
+x[2].style.backgroundColor = "cyan";
+}
+</script>
+
+</head>
+<body>
+
+<p id="id"> eu </p>
+<p> eu2 </p>
+<h1 id="id"> eu3 </h1>
+<h1 id="id"> eu4 </h1>
+<h1 id="id"> eu6 </h1>
+
+
+<input type="button" onclick="f1()" value="Añade"/>
+
+
+</body>
+</html>

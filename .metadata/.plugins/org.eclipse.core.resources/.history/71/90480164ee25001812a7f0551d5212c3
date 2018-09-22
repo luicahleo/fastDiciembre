@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 30 eventos</title>
+<script type="text/javascript">
+"use strict";
+function muestraMensaje() {
+	  alert("Gracias por pinchar.");
+	}
+</script>
+</head>
+<body>
+
+<input type="button" value="Haz clic para activar evento " 
+       onclick="muestraMensaje()" />
+</body>
+</html>

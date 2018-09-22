@@ -1,0 +1,147 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletCrearUsuario
+ */
+//TODO MODIFICAR
+@WebServlet(urlPatterns={"modificarUsuario"})
+public class ServletModificarUsuario extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	private static final int LON_MIN = 6;
+	private static final int LON_MAX = 10;
+	private static final int MIN_MAYUSCULAS = 2;
+	private static final int MIN_MINUSCULAS = 2;
+	private static final int MIN_NUMERICOS = 2;
+	private static final int LON_MAX_USU = 11;
+
+	/**
+	 * Verifica que la contraseña y el usuario cumplen los requisitos
+	 * @param pass
+	 * @param usu
+	 * @return Verdadero si cumple.
+	 */
+	private boolean compruebaContraUsu(String pass, String usu) {
+		boolean res = false;
+		int numericos = 0;
+		int mayusculas = 0;
+		int minusculas = 0;
+		
+		// TODO MODIFICAR
+		//if () {
+		//  for () {
+		//  }
+		//  if(){
+		//  }
+		//}
+		return res;
+	}
+	
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletModificarUsuario() {
+        super();
+        
+    }
+
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String usu = request.getParameter("usu");
+		String contra1 = request.getParameter("contra1");
+		String contra2 = request.getParameter("contra2");
+		boolean error = false;
+		String mensaje = "";
+		if (usu!= null && contra1!=null && contra2!=null
+				&& !usu.isEmpty() && !contra1.isEmpty() && !contra2.isEmpty()
+				&& contra1.equals(contra2)
+				&& compruebaContraUsu(contra1, usu))
+		{
+			boolean usuExiste = false;
+			String sql;
+			try {
+				DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");
+				Connection conn = ds.getConnection();
+				
+				//Obtener si el usuario existe
+				sql = "SELECT id_usuario FROM usuarios WHERE id_usuario=?";
+				PreparedStatement pst = conn.prepareStatement(sql);
+				pst.setString(1, usu);
+				ResultSet rs = pst.executeQuery();
+				if (rs.next()) {
+					usuExiste = true;
+				}
+				rs.close();
+				pst.close();
+
+				//Realizar la operación
+				if (usuExiste) {
+					//Actualizar contraseña de usuario
+					// TODO MODIFICAR
+					sql = "";
+					PreparedStatement st = conn.prepareStatement(sql);
+					st.setString(1, contra1);
+					st.setString(2, usu);
+					int rows = st.executeUpdate();
+					if (rows == 1) {
+						//Modificación correcta
+					} else {
+						error = true;
+						mensaje = "Error modificando la contraseña";
+					}
+					st.close();
+				} else {
+					//Crear usuario cliente con su contraseña
+					sql = "INSERT INTO usuarios VALUES (?,?,?)";
+					PreparedStatement st = conn.prepareStatement(sql);
+					st.setString(1, usu);
+					st.setString(2, contra1);
+					st.setInt(3, Usuario.CLIENTE);
+					int rows = st.executeUpdate();
+					if (rows == 1) {
+						//Creación correcta
+					} else {
+						error = true;
+						mensaje = "Error creando el usuario";
+					}
+					st.close();
+				}
+				
+			} catch (SQLException e) {
+				error = true;
+				mensaje = "Error creando el usuario";
+			}
+		} else {
+			error = true;
+			mensaje = "Error en los datos del usuario.";
+		}
+		
+		if (error) {
+			// TODO MODIFICAR
+			//request.setAttribute(  );
+			//request.setAttribute("volverURL", );
+			//request.getRequestDispatcher("").forward(request, response);
+		} else {
+			// TODO COMPLETAR
+
+		}
+		
+	}
+
+}

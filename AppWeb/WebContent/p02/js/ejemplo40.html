@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo DOM </title>
+</head>
+<body>Texto en body
+<div id="cabecera" class="brillante">
+<h1>Prueba <span class="destacado">de DOM</span>, para probar</h1>
+</div>
+<pre id=relleno></pre>
+<!-- Final del código-->
+<script type = "text/javascript">
+"use strict";
+var msg = '';
+msg = '¿Quién es el nodo padre de document? '                             + document.parentNode + '\n';
+msg = msg + ' document.nodeType: ' + document.nodeType +'\n document.nodeName: '+ document.nodeName + '\n document.nodeValue: ' + document.nodeValue +'\n';
+msg = msg + 'Nodo hijo del nodo raíz es la declaración DOCTYPE con:\n';
+msg = msg + ' document.childNodes[0].nodeType: '                          + document.childNodes[0].nodeType +'\n';
+msg = msg + ' document.childNodes[0].nodeName: '                          + document.childNodes[0].nodeName +'\n';
+msg = msg + ' document.childNodes[0].nodeValue: '                         + document.childNodes[0].nodeValue +'\n';
+msg = msg + ' document.childNodes[0].name: '                              + document.childNodes[0].name +'\n';
+msg = msg + ' document.childNodes[0].publicId: '                          + document.childNodes[0].publicId +'\n';
+msg = msg + ' document.childNodes[0].systemId: '                          + document.childNodes[0].systemId +'\n';
+msg = msg + 'Nodo hijo del nodo raíz es etiqueta html con:\n';
+msg = msg + ' document.childNodes[1].nodeType: '                          + document.childNodes[1].nodeType +'\n';
+msg = msg + ' document.childNodes[1].nodeName: '                          + document.childNodes[1].nodeName +'\n';
+msg = msg + ' document.childNodes[1].nodeValue: '                         + document.childNodes[1].nodeValue +'\n';
+msg = msg + ' document.childNodes[1].childNodes.length: '                 + document.childNodes[1].childNodes.length  +'\n';
+msg = msg + ' document.childNodes[1].children.length: '                   + document.childNodes[1].children.length +'\n';
+msg = msg + '  Nodo hijo de etiqueta html es etiqueta head con:\n';
+msg = msg + '   document.childNodes[1].childNodes[0].nodeType: '          + document.childNodes[1].childNodes[0].nodeType +'\n';
+msg = msg + '   document.childNodes[1].childNodes[0].nodeName: '          + document.childNodes[1].childNodes[0].nodeName +'\n';
+msg = msg + '   document.childNodes[1].childNodes[0].nodeValue: '         + document.childNodes[1].childNodes[0].nodeValue +'\n';
+msg = msg + '   document.childNodes[1].childNodes[0].childNodes.length: ' + document.childNodes[1].childNodes[0].childNodes.length  +'\n';
+msg = msg + '   document.childNodes[1].childNodes[0].children.length: '   + document.childNodes[1].childNodes[0].children.length +'\n';
+msg = msg + '  Nodo hijo de etiqueta html es texto vacío con:\n';
+msg = msg + '   document.childNodes[1].childNodes[1].nodeType: '          + document.childNodes[1].childNodes[1].nodeType +'\n';
+msg = msg + '   document.childNodes[1].childNodes[1].nodeName: '          + document.childNodes[1].childNodes[1].nodeName +'\n';
+msg = msg + '   document.childNodes[1].childNodes[1].nodeValue: '         + document.childNodes[1].childNodes[1].nodeValue +'\n';
+msg = msg + '  Nodo hijo de etiqueta html es etiqueta body con:\n';
+msg = msg + '   document.childNodes[1].childNodes[2].nodeType: '          + document.childNodes[1].childNodes[2].nodeType +'\n';
+msg = msg + '   document.childNodes[1].childNodes[2].nodeName: '          + document.childNodes[1].childNodes[2].nodeName +'\n';
+msg = msg + '   document.childNodes[1].childNodes[2].nodeValue: '         + document.childNodes[1].childNodes[2].nodeValue +'\n';
+msg = msg + '   document.childNodes[1].childNodes[2].childNodes.length: ' + document.childNodes[1].childNodes[2].childNodes.length  +'\n';
+msg = msg + '   document.childNodes[1].childNodes[2].children.length: '   + document.childNodes[1].childNodes[2].children.length +'\n';
+//alert (msg);
+document.getElementById("relleno").innerHTML=msg;
+</script>
+</body>
+</html>

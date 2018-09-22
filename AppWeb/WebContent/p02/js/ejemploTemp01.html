@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+var cont=0;
+function avisa(seg)
+{
+  cont++;
+  setTimeout(function(){alert("Ha esperado " + seg + " segundos y el contador está a "+cont)},seg*1000);
+}
+</script>
+</head>
+<body>
+
+<p>Haga clic sobre el botón y espere...</p>
+<button onclick="avisa(3)">¡Prueba!</button>
+
+
+</body>
+</html> 

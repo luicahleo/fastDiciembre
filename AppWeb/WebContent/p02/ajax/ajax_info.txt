@@ -1,0 +1,1 @@
+<strong> Esta línea es el contenido del fichero de texto <em>"ajax_info.txt"</em>. </strong>

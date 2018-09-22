@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>PRUEBAS</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <base target="_blank"/>
+  </head>
+
+  <body>
+  <h1>Pruebas Bloc de Notas - FAST</h1>
+  <ul>
+    <li><a href="cabecera.jsp">Solo cabecera</a></li>
+    <li><a href="pie.jsp">Solo pie</a></li>
+    <li><a href="inicio.jsp">Inicio</a></li>
+    <li><a href="inicio.jsp?salir">Cerrar sesión</a></li>
+    <li><a href="menu.jsp?usuario=x&amp;clave=x">Inicio sesión con usuario incorrecto</a></li>
+    <li><a href="menu.jsp?usuario=usuario&amp;clave=clave">Inicio sesión con usuario correcto</a></li>
+    <li><a href="crearnota.jsp">Inicio de nueva nota</a></li>
+    <li><a href="crearnota.jsp?titulo=Prueba&amp;imagen=imagen/nota.png&amp;nota=Prueba">Crear nota correcta</a></li>
+    <li><a href="crearnota.jsp?titulo='&amp;imagen=&amp;nota=">Crear nota con caracteres inválidos</a></li>
+    <li><a href="listarnotas.jsp">Listar notas</a></li>
+    <li><a href="detallenota.jsp?id=0">Obtener detalle nota (no existe)</a></li>
+    <li><a href="detallenota.jsp?id=1">Obtener detalle nota id=1 (existe)</a></li>
+    <li><a href="borrarnota.jsp?id=1">Borrar nota id=1 (existe)</a></li>
+    <li><a href="borrarnota.jsp?id=0">Borrar nota id=0 (no existe)</a></li>
+  </ul>
+  </body>
+</html>

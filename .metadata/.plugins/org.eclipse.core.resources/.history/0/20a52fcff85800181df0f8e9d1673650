@@ -1,0 +1,103 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletMostrarRedes
+ */
+//TODO MODIFICAR
+//@WebServlet(urlPatterns={"mostraRedes"})
+public class ServletMostrarRedes extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletMostrarRedes() {
+        super();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		String paramIp = request.getParameter("ip");
+		if (paramIp != null) {
+			try {
+				int ipNueva = OperacionesIP.ipToInt(paramIp);
+				DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");
+				Connection conn = ds.getConnection();
+
+				String sql = "";
+				sql = "SELECT ip, masc, ip_gw from direcciones_IP";
+				PreparedStatement st = conn.prepareStatement(sql);
+
+				ResultSet rs = st.executeQuery();
+				out.println("[");
+				boolean hayDato = rs.next();
+				boolean ponerComa = false;
+				while (hayDato) {
+
+					String ip = rs.getString(1);
+					int maskBits = rs.getInt(2);
+					String ip_gw = rs.getString(3);
+
+					// Comprobar si la IP pertenece a la misma subred
+					// TODO MODIFICAR
+					int ipInt = 0;
+					int mask = 0;
+					if (false) {
+						if (ponerComa)
+							out.println(",");
+						out.print("  {");
+						out.print("\"ip\": \"" + ip + "\",");
+						out.print("\"masc\": \"" + maskBits + "\",");
+						out.print("\"ip_gw\": \"" + ip_gw + "\"");
+						out.print("}");
+						ponerComa = true;
+					} else {
+						ponerComa = false;
+					}
+
+					hayDato = rs.next();
+				}
+				out.println("\n]");
+
+				rs.close();
+				st.close();
+				conn.close();
+
+			} catch (Exception e) {
+				out.println("[]");
+				e.printStackTrace();
+				System.out.println("Error de acceso a la base de datos. ServletMostrar");
+			}
+		} else {
+			out.println("[]");
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+
+}

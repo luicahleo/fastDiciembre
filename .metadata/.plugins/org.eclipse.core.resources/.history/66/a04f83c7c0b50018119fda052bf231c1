@@ -1,0 +1,252 @@
+/* estilos.css*/
+
+/* Nota: estos estilos requieren HTML según enunciado.. 
+- div contenedor que incluya el resto de la página
+- form y tabla dentro de dos section o div de la clase col-2
+- footer al final de la página con h2 dentro
+- los input deben tener asociada su label correspondiente
+
+*/
+
+/* Parte resuelta */
+
+#contenedor {
+  font-family: Arial;
+  width: 90%;
+  margin: auto;
+}
+
+/* Formulario 
+  durante la introdución de datos en las entradas del formulario 
+  cambiará su color de fondo a lightcyan */
+
+input[type="text"]:focus, 
+input[type="number"]:focus, 
+input[type="password"]:focus  {
+  background-color: lightcyan;
+}
+
+/* Bloques en 2 columnas */
+.col-2 {
+  padding-left: 1em;
+  display: table-cell;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* si ancho pantalla menor de 690px
+  pasamos a una columna */
+@media (max-width: 690px) {
+  .col-2 {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* formulario */
+
+label {
+  display: block;
+}
+
+input[type="text"],input[type="number"]  {
+  padding-left: 0.2em;
+}
+
+.oculto {
+	display: none;
+	
+}
+
+/* *****************************************
+   Empieza el trabajo de curso
+   COMPLETAR
+******************************************** */
+
+/* clase entrada. 
+   color verde y subrayado del contenido */
+   .entrada {
+   color: green;
+   text-decoration: underline;
+   }
+
+
+/* clase warning.
+  negrita, color de texto blanco y color de fondo rojo */
+  .warning{
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  }
+
+
+/* clase revisando 
+   color gris, estilo itálica y un borde 
+   punteado de 1px de grosor y color rojo */
+.revisando{
+	color: grey;
+	font-style: italic;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: red;
+}
+
+
+/* Estilos del pie  de página o footer 
+1)  borde superior de 1px negro y continuo
+2) el texto del h2 contenido en footer tendrá:
+   - tamaño del 80%
+   - alineación a la derecha
+   - estilo itálica
+   - no aparecerá en negrita */
+footer {
+	border-top-width: 1px;
+	border-top-color: black;
+	border-top-style: solid;
+}
+footer h2{
+	font-size: 80%;
+	text-align: right;
+	font-color: red;
+	font-style: italic;
+	font-weight: 400;
+}
+
+/* Estilos del h1 
+   Aparecerá centrado y con un border de 2px continuo y negro */
+   h1{
+   text-align: center;
+   border-width: 1px;
+   border-bottom-style: solid;
+   border-color: black;
+   }
+
+
+
+/* Reglas de estilo tabla direcciones 
+1) la tabla tendrá un ancho del 100% 
+
+2) las celdas cabeceras de columna
+  - color blanco
+  - anchura 33.33%;
+  - color de fondo cyan;
+
+3) las celdas del cuerpo de la tabla, una vez relleno:
+ - alineadas al centro;
+ - usaran el tipo de letra Consolas o en su defecto la familia genérica monospace
+ - tendrán un relleno de 0.2em
+
+4) 
+Las filas del cuerpo de la tabla impares aparecerán 
+con el color de fondo lightcyan.
+Se recomienda el uso del selector nth-child  */
+table {
+	width: 100%;
+}
+
+table th{
+	color: white;
+	width: 33.33%;
+	background-color: cyan;
+}
+
+table tbody{
+	text-align: center;
+	font-style: consolas;
+	padding: 0.2em;
+}
+
+table tr:nth-child(even){
+	background-color: lightcyan;
+}
+
+/***************************************************
+trabajo completo
+***************************************************/
+.interfaces th {
+  width: auto;
+}
+
+#bienvenida {
+	clear: both;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bienvenida h1 {
+	border-bottom: none;
+}
+
+#bienvenida {
+	padding-top: 10%;
+}
+
+#formacceso {
+	color: teal;
+	background-color: white;
+	display: none;
+	font-size: 11px;
+	padding: 0px 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 auto;	
+	text-align: center;
+}
+
+#formacceso .boton {
+	font-size: 10px;
+	font-weight: bold;
+	padding: 1px;
+	margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.boton {
+	background-color: teal;
+	color: white;
+	text-transform: uppercase;
+}
+
+.boton:hover,  .acceso:hover{
+	background-color: #5a5;
+}
+.acceso {
+	display: block;
+	background-color: teal;
+	color: white;
+	float: right;
+	font-size: 11px;
+	padding: 10px 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 2px;
+}
+
+#volver {
+	float: left;
+}
+
+#nombreusuario {
+	background-color: white;
+	color:  teal;
+}
+
+#cabecera {
+	margin: 0 auto 0 auto;
+	width: 90%;
+}
+
+#sepCabecera {
+	clear: both;
+}
+
+#pie:hover h2:hover{
+	background-color: yellow;
+	margin: 40px auto 0 auto;
+	width: 90%;
+}
+

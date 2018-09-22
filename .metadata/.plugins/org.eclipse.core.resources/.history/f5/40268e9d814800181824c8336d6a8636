@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<title>Usuario</title>
+</head>
+
+<body>
+<h1>Creación/modificación de usuario</h1>
+<h2 class="entrada">Introduzca usuario y contraseña</h2>
+
+<p>El usuario debe contener un máximo de 11 caracteres</p>
+<p>La contraseña debe cumplir las siguientes condiciones:</p>
+
+<ol>
+  <li>debe tener una longitud mínima de 6 caracteres</li>
+  <li>debe tener una longitud máxima de 10 caracteres</li>
+  <li>debe contener al menos dos caracteres numéricos</li>
+  <li>debe contener al menos dos caracteres en mayúsculas</li>
+  <li>debe contener al menos dos caracteres en minúsculas</li>
+  <li>no debe contener el nombre de usuario</li>
+</ol> 
+
+<form name="formUsu" id="formUsu">
+  <input name="usu" id="usu" type="text" max="11">
+  Usuario
+  <br>
+  <input name="contra1" id="contra1" type="password" max="10">
+  Contraseña
+  <br>
+  <input name="contra2" id="contra2" type="password" max="10">
+  Repetición contraseña
+  <br>
+  <input type="submit" value="Enviar">
+  <input type="reset" value="Limpiar">
+  
+</form> 
+
+</body>
+</html>

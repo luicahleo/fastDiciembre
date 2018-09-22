@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 50 eventos</title>
+<script type="text/javascript">
+"use strict";
+function ChangeText() {
+  document.getElementById("d1").innerHTML="Texto que sustituye al anterior";
+}
+</script>
+</head>
+<body>
+<!-- el contenido siguiente puede cambiar -->
+<p id="p1">Texto que puede cambiar si hace clic</p>
+<input type="button" onclick="ChangeText()" value="Cambia texto" />
+</body>
+</html> 

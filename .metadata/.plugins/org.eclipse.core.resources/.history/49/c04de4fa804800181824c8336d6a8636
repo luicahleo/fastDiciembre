@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<title>Usuario</title>
+</head>
+
+<body>
+<h1>Creación/modificación de usuario</h1>
+<h2 class="entrada">Introduzca usuario y contraseña</h2>
+
+</body>
+</html>

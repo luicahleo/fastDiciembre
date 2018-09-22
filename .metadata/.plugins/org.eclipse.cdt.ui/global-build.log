@@ -1,0 +1,76 @@
+13:36:59 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+15:22:19 **** Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+15:22:19 **** Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+15:31:36 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+15:31:37 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+15:38:00 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+15:38:00 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+15:38:05 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+15:38:06 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+19:15:44 **** Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+19:15:48 **** Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+19:25:06 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+19:25:08 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+13:52:05 **** Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+13:52:07 **** Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+13:52:33 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+13:52:34 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*
+18:30:11 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+18:30:12 **** Incremental Build of configuration Default for project AppWeb ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppWeb/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppWeb/WEB-INF/cgi/*

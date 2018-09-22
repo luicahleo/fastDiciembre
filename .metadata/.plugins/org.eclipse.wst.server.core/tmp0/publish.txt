@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Sep 12 06:15:56 CEST 2018
+org.eclipse.jst.jee.server\:AppTrabajo=/home/dit/tomcat/webapps/AppTrabajo
+org.eclipse.jst.jee.server\:AppWeb=/home/dit/tomcat/webapps/AppWeb

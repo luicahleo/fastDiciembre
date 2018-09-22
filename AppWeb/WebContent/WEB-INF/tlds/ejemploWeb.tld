@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib 
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<!-- Fichero descriptor de la librería -->
+
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>2.0</jspversion>
+  <shortname>LSC_ejemploWeb</shortname>
+  <info>
+    Librería para mostrar la creación de etiquetas
+  </info>
+
+  <tag>
+    <name>hola</name>
+    <tagclass>tags.HolaTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info> Muestra el mensaje "Hola" </info>
+    <attribute>
+       <name>atrhola</name>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>adios</name>
+    <tagclass>tags.AdiosTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info> Muestra el mensaje "Adios" </info>
+    <attribute>
+       <name>atrad</name>
+       <required>true</required>
+    </attribute>
+    <attribute>
+       <name>atrad2</name>
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>       
+
+</taglib>

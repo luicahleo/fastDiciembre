@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 31 eventos</title>
+<script>
+"use strict";
+//function muestraMensaje2() {
+//	  alert("Esta es muestraMensaje2");
+//	}
+function muestraMensaje() {
+	  alert("Gracias por pinchar.");
+//	  return "valor devuelto por la funcion debe ser una función, no un string";
+//    return muestraMensaje2;
+	}
+</script>
+</head>
+<body>
+
+<input id="b1" type="button" value="Haz clic para activar evento " />
+<script>
+"use strict";
+var x = document.getElementById("b1");
+//x.onclick = muestraMensaje;
+x.onclick = muestraMensaje();
+//x.onclick = "muestraMensaje()";
+//x.onclick = function(){muestraMensaje()};
+var y=x;
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Ejemplo05 </title> 
+</head>
+<body>
+<script>
+//"use strict";
+var precio=10.52;
+var saludo="Hola";
+var correcto=false;
+var indefinida;
+var nula= null;
+res=precio;
+//var res=precio;
+</script>
+
+<pre>
+var precio=10.52;
+var saludo="Hola";
+var correcto=false;
+var indefinida;
+var nula= null;
+res=precio;
+</pre>
+
+<script>
+//"use strict";
+//var x;
+//var x=3;
+//x=3;
+document.write(
+"<table>",
+"<tr><td>res:               </td><td>", res,              "</td><td> ==&gt;",
+"</td><td>typeof res:       </td><td>", typeof res,       "</td></tr>",
+"<tr><td>precio:            </td><td>", precio  ,         "</td><td> ==&gt;",
+"</td><td>typeof precio:    </td><td>", typeof precio,    "</td></tr>",
+"<tr><td>saludo:            </td><td>", saludo  ,         "</td><td> ==&gt;",
+"</td><td>typeof saludo:    </td><td>", typeof saludo,    "</td></tr>",
+"<tr><td>correcto:          </td><td>", correcto ,        "</td><td> ==&gt;",
+"</td><td>typeof correcto:  </td><td>", typeof correcto,  "</td></tr>",
+"<tr><td>indefinida:        </td><td>", indefinida ,      "</td><td> ==&gt;",
+"</td><td>typeof indefinida:</td><td>", typeof indefinida,"</td></tr>",
+"<tr><td>nula:              </td><td>", nula ,            "</td><td> ==&gt;",
+"</td><td>typeof nula:      </td><td>", typeof nula,      "</td></tr>",
+"</table>");
+
+nula=7.5;
+indefinida="2012-12-12";
+correcto="CORRECTO";
+saludo=7;
+
+document.write(
+"<pre>",
+"var nula= 7.5;\n",
+"var indefinida=\"2012-12-12\";\n",
+"var correcto=\"CORRECTO\";\n",
+"var saludo=7;\n",
+"</pre>");
+
+document.write(
+"<table>",
+"<tr><td>res:               </td><td>", res,              "</td><td> ==&gt;",
+"</td><td>typeof res:       </td><td>", typeof res,       "</td></tr>",
+"<tr><td>precio:            </td><td>", precio  ,         "</td><td> ==&gt;",
+"</td><td>typeof precio:    </td><td>", typeof precio,    "</td></tr>",
+"<tr><td>saludo:            </td><td>", saludo  ,         "</td><td> ==&gt;",
+"</td><td>typeof saludo:    </td><td>", typeof saludo,    "</td></tr>",
+"<tr><td>correcto:          </td><td>", correcto ,        "</td><td> ==&gt;",
+"</td><td>typeof correcto:  </td><td>", typeof correcto,  "</td></tr>",
+"<tr><td>indefinida:        </td><td>", indefinida ,      "</td><td> ==&gt;",
+"</td><td>typeof indefinida:</td><td>", typeof indefinida,"</td></tr>",
+"<tr><td>nula:              </td><td>", nula ,            "</td><td> ==&gt;",
+"</td><td>typeof nula:      </td><td>", typeof nula,      "</td></tr>",
+//"<tr><td>x:                 </td><td>", x ,               "</td><td> ==&gt;",
+//"</td><td>typeof x:         </td><td>", typeof x,         "</td></tr>",
+"</table>");
+//var x;
+</script>
+</body>
+</html>
+

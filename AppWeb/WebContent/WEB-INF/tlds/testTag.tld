@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib 
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<!-- Fichero descriptor de la librería -->
+
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>2.0</jspversion>
+  <shortname>Ejemplos FAST</shortname>
+  <info>
+    Ejemplo de librería de etiquetas.
+  </info>
+  <tag>
+    <name>test</name>
+    <tagclass>fast.tags.TestTag</tagclass>
+    <bodycontent>scriptless</bodycontent>
+    <attribute>
+       <name>nombre</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    
+  </tag>       
+
+</taglib>

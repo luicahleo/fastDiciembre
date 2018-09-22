@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 52 Atributos</title>
+</head>
+<body>
+
+<p id="primero" class="elemento_con_enlace"> primer párrafo 
+   <a href="http://www.google.es"> Google </a> 
+</p>
+
+<a id="enlace" class="elemento_con_enlace" href="http://www.cnn.com">CNN</a>
+
+<script type="text/javascript">
+  "use strict";
+  var elem_enlace = document.getElementById("enlace");
+  alert(elem_enlace.href); // muestra http://www.cnn.com
+  
+  var x = document.getElementsByTagName("P")[0].getAttribute("class");
+  document.getElementById("primero").innerHTML = x;
+  //alert(x.href);
+  
+ // var elem_enlace1 = document.getElementById("primero");
+ // alert(elem_enlace1.href); 
+</script>
+
+</body>
+</html>

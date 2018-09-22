@@ -1,0 +1,12 @@
+<!ELEMENT tablon (anuncio*)>
+<!ELEMENT anuncio (fecha,asunto, texto?, precio, contacto)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT asunto (#PCDATA)>
+<!ELEMENT texto (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT contacto (#PCDATA)>
+
+<!ATTLIST anuncio vendido CDATA #REQUIRED
+                  codigo  ID  #REQUIRED  >
+<!ATTLIST precio moneda_pago NMTOKEN #IMPLIED >
+<!ATTLIST contacto visible ( si | no ) #REQUIRED >

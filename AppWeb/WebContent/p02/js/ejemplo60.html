@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo valida form</title>
+
+<script>
+"use strict";
+function validacion() {  
+  var valor = document.getElementById("edad").value;
+  var nombre = document.getElementById("nombre").value;
+
+  if ( isNaN(valor) || valor<=0 || nombre.length==0) {
+    alert('[ERROR] El campo edad debe ser numérico..');
+    return false;
+  }
+  // Si el script ha llegado a este punto, todas las condiciones
+  // se han cumplido, por lo que se devuelve el valor true
+  return true;
+}
+</script>
+</head>
+<body>
+<form 	action="" method="post" id="formulario" name="formulario" 
+		onsubmit="return validacion()">	
+Nombre: <input type="text" id="nombre"> <br/>
+Edad: <input type="text" id="edad"><br/>
+<input type="submit" value="Submit">		
+</form>
+</body>
+</html>

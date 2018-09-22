@@ -1,0 +1,166 @@
+/* estilos.css*/
+
+/* Nota: estos estilos requieren HTML según enunciado.. 
+- div contenedor que incluya todo
+- form y tabla dentro de dos section o div de la clase col-2
+- footer al final de la página con h2 dentro
+- los input deben tener asociada su label correspondiente
+
+*/
+
+/* Parte resuelta */
+
+#contenedor {
+  font-family: Arial;
+  width: 90%;
+  margin: auto;
+}
+
+/* Formulario 
+  durante la introdución de datos en las entradas del formulario 
+  cambiará su color de fondo a lightcyan */
+
+input[type="text"]:focus, 
+input[type="number"]:focus, 
+input[type="password"]:focus  {
+  background-color: lightcyan;
+}
+
+/* Bloques en 2 columnas */
+.col-2 {
+  padding-left: 1em;
+  display: table-cell;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* si ancho pantalla menor de 690px
+  pasamos a una columna */
+@media (max-width: 690px) {
+  .col-2 {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* formulario */
+
+label {
+  display: block;
+}
+
+input[type="text"],input[type="number"]  {
+  padding-left: 0.2em;
+}
+
+/* *****************************************
+   Empieza el trabajo de curso
+******************************************** */
+
+/* clase entrada. 
+   color verde y subrayado del contenido */
+
+.entrada {
+    text-decoration: underline;
+    color: green;
+}
+
+
+/* clase warning.
+  negrita, color de texto blanco y color de fondo rojo */
+
+.warning {
+	color: white;
+	background-color: red;
+    font-weight: bold;
+	
+}
+
+
+/* clase revisando 
+   color gris, estilo itálica y un borde 
+   punteado de 1px de grosor y color rojo */
+
+.revisando {
+	color: grey;
+	font-style: italic;
+	border-style: dotted;
+	border-width: 1px;
+    border-color: red;
+}   
+
+
+/* Estilos del pie  de página o footer 
+1)  borde superior de 1px negro y continuo */
+
+footer {
+	border-top-style: solid;
+	border-width: 1px;
+	​text-align: right;   
+}  
+
+/* 2) el texto del h2 contenido en footer tendrá:
+   - tamaño del 80%
+   - alineación a la derecha
+   - estilo itálica
+   - no aparecerá en negrita */
+
+footer h2{
+	font-size: 80%;
+	font-style: italic;
+	text-align: right;
+	
+	
+}
+
+/* Estilos del h1 
+   Aparecerá centrado y con un borde inferior de 2px continuo y negro */
+
+h1 {
+	text-align: center;
+	border-bottom-style: solid;	
+	border-color: black;
+	border-width: 2px;
+}
+
+
+/* Reglas de estilo tabla direcciones 
+1) la tabla tendrá un ancho del 100% */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+/*2) las celdas cabeceras de columna
+  - color blanco
+  - anchura 33.33%;
+  - color de fondo cyan; */
+  
+th {
+	color: white;
+	background-color: cyan;
+    width: 33.33%;
+}
+
+/*3) las celdas del cuerpo de la tabla, una vez relleno:
+ - alineadas al centro;
+ - usaran el tipo de letra Consolas o en su defecto la familia genérica monospace
+ - tendrán un relleno de 0.2em */
+ 
+td {
+	text-align: center;
+	font-family: monospace;
+    padding: 0.2em;
+	
+} 
+
+/*4) Las filas del cuerpo de la tabla impares aparecerán 
+con el color de fondo lightcyan.  
+Se recomienda el uso del selector nth-child  */
+
+tr:nth-child(even) {background-color: lightcyan;} 

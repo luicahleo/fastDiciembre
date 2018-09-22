@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tablon
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="tablon_comp.xsd">
+
+  <anuncio codigo="A000" vendido="no">
+    <fecha>2014-09-22</fecha>
+    <asunto> Vendo bicicleta </asunto>
+    <texto> 2 anios, cambios en buen estado</texto>
+    <precio>500</precio>
+    <contacto> 95 456 456 </contacto>
+  </anuncio>
+
+  <anuncio codigo="A001" vendido="no">
+    <fecha>2011-09-22</fecha>
+    <asunto> Vendo moto </asunto>
+    <texto> buena, bonita, barata</texto>
+    <precio> 1000</precio>
+    <contacto> 666 123 123 </contacto>
+  </anuncio>
+
+  <anuncio codigo="A002" vendido="si">
+    <fecha>2011-09-24</fecha>
+    <asunto> Vendo bici</asunto>
+    <texto> muy bonita, con candado</texto>
+    <precio> 90 </precio>
+    <contacto> a@ese.com </contacto>
+  </anuncio>
+
+</tablon>
+

@@ -1,0 +1,90 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletInterfaces
+ */
+//@WebServlet(urlPatterns={"/clientes/verIntSinAsignar", "/admin/verIntSinAsignar"})
+public class ServletIntSinAsignar extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletIntSinAsignar() {
+        super();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		try {
+			Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
+			@SuppressWarnings("unchecked")
+			Map<Integer,String> tipos_in = (Map<Integer, String>) request.getServletContext().getAttribute("tipos_in");
+			DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");
+			Connection conn = ds.getConnection();
+
+			String sql="";
+			// TODO MODIFICAR
+			if (1!=Usuario.ADMINISTRADOR)
+				sql = "select id_eq, num_in, id_ti, ip, masc, ip_gw from interfaces natural left join direcciones_ip where direcciones_ip.ip is NULL and interfaces.id_eq in (select id_eq from equipos where id_usuario=?)  ORDER BY id_eq, num_in";
+			else
+				sql = "select id_eq, num_in, id_ti, ip, masc, ip_gw from interfaces natural left join direcciones_ip where direcciones_ip.ip is NULL ORDER BY id_eq, num_in";//
+			PreparedStatement st = conn.prepareStatement(sql);
+			// TODO MODIFICAR
+			if (1!=Usuario.ADMINISTRADOR)
+				st.setString(1, usuario.getUsu());
+
+			ResultSet rs = st.executeQuery();
+			out.println("[");
+			boolean hayDato = rs.next();
+			while (hayDato) {
+				out.print("  {");
+				String id_eq = rs.getString(1);
+				int num_in = rs.getInt(2);
+				String des = tipos_in.get(rs.getInt(3));
+				String ip = rs.getString(4);
+				String masc = rs.getString(5);
+				String ip_gw = rs.getString(6);
+				out.print("\"id_eq\": \""+id_eq+"\",");
+				out.print("\"num_in\": \""+num_in+"\",");
+				out.print("\"des\": \""+des+"\",");
+				out.print("\"ip\": \""+ip+"\",");
+				out.print("\"masc\": \""+masc+"\",");
+				out.print("\"ip_gw\": \""+ip_gw+"\"");
+				out.print("}");
+				hayDato = rs.next();
+				if (hayDato)
+					out.println(",");
+			}
+			out.println("\n]");
+
+			rs.close();
+			st.close();
+			conn.close();
+
+		} catch (SQLException e) {
+			out.println("[]");
+			e.printStackTrace();
+			System.out.println("Error de acceso a la base de datos. ServletIntsinAsignar");
+		}
+	}
+}

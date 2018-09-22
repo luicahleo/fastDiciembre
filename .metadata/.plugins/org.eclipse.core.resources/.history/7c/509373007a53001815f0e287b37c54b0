@@ -1,0 +1,166 @@
+// funIp.js
+"use strict";
+
+function procesaIp(cadena) {
+	
+	var cadena1=cadena.toString();
+	var str=cadena1.trim();
+	var ip=str.split('.');
+	var maxi="255";
+	var mini="000";
+	var resultado=0;
+	var string="";
+	
+	if(ip.length!=4)
+		resultado= -1;
+        
+    for(var i=0; i<ip.length; i++){
+  
+		if (/\D/.test(ip[i])||ip[i]=="")
+			resultado= -2;
+            
+    	if(parseInt(mini)>parseInt(ip[i]) || parseInt(maxi)<parseInt(ip[i]))
+			resultado= -3;    
+	}
+    
+    if(resultado==0){
+    	for(var i=0; i<ip.length; i++){
+    		ip[i]=(parseInt(ip[i])).toString();
+    		string+=ip[i]+".";
+        	var res = string.substring(0, string.length-1);
+        	resultado=res;
+    	}
+    }
+	  
+	return resultado;
+}
+
+function ipToBin(cadena) {
+	var ip=cadena.split('.');//ip=array de los elementos que hay separados por puntos
+    var res="";
+  
+    for(var i=0; i<ip.length; i++){
+	    ip[i]=(parseInt(ip[i])).toString(2).padStart(8,0);//paso a binario
+	    ip[i]=ip[i].toString();//lo paso a cadena
+        res=res.concat(ip[i]);//lo concateno con los resultados anteriores
+    }
+    return res;
+}	
+	
+/*	var a = num.toString(2);
+	var b = num.toString(2);
+	var c = num.toString(2);
+	var d = num.toString(2);
+	
+	n= a + b + c + d;
+	
+	return n;*/
+
+function validaFormulIp() {
+	
+	var resultado= 0;
+	var dir = document.getElementById("ip").value;
+	var mascara = document.getElementById("mask").value;
+	var mascara1= Number(mascara);
+	var dirpas = document.getElementById("gw").value;
+    var comprueba = procesaIp(dir);
+    var comprueba1 = procesaIp(dirpas);
+    var binario = ipToBin(dir);
+    var binario1 = ipToBin(dirpas);
+    var compara= binario.substring(0,mascara1);    
+	var compara1= binario1.substring(0,mascara1);    
+	
+	if(compara!=compara1){
+		alert("Error: no pertenecen a la misma subred");
+		resultado= false;
+		
+	}else
+		resultado= true;
+
+    
+    switch(comprueba){
+    case -1:
+  		alert("Error en Dirección IP: no contiene sólo tres puntos");
+  		resultado= false;
+  		break;
+	case -2:
+		alert("Error en Dirección IP: no contiene cuatro campos sólo numéricos");
+	    resultado= false;
+	    break;
+	case -3:
+		alert("Error en Dirección IP: contiene números fuera de rango");
+	    resultado= false;
+	    break;
+	default:
+		resultado= true;
+    }
+    
+    switch(comprueba1){
+    case -1:
+  		alert("Error en Dirección IP pasarela: no contiene sólo tres puntos");
+  		resultado= false;
+  		break;
+	case -2:
+		alert("Error en Dirección IP pasarela: no contiene cuatro campos sólo numéricos");
+	    resultado= false;
+	    break;
+	case -3:
+		alert("Error en Dirección IP pasarela: contiene números fuera de rango");
+	    resultado= false;
+	    break;
+	default:
+		resultado= true;
+    }    
+	    
+	
+	    
+	return resultado;    
+}
+
+function creaFila(ip) {
+	
+	var nuevafila = "<tr><td>";
+	var str;
+
+	str = nuevafila + ip.ip + "</td>" + "<td>" + ip.mask + "</td>" + "<td>"
+			+ ip.gw + "</td></tr>";
+
+	return str;
+}
+
+function mostrarRedes(redes) {
+	
+	var i;
+	var tabla = "<thead><tr><th>IP</th><th>Mask</th><th>Gw</th></tr></thead>";
+	var fila = "";
+	var selector;
+	var red = redes.length;
+
+	for (i = 0; i < red; i++) {
+		fila = creaFila(redes[i]);
+		// selector = document.getElementsByTagName("tr");
+		// selector[i].addEventListener("click", function(){fila.remove();});
+		tabla += fila;
+	}
+	document.getElementsByTagName("table")[0].innerHTML = tabla;
+	var tr = document.getElementsByTagName("tr");
+	// i=!;
+	for (i = 1; i < tr.length; i++) {
+		// tr[i].addEventListener("click", function(){tr[i].remove;});
+		tr[i].addEventListener("click", function() {
+			this.parentNode.removeChild(this);
+		});
+	}
+}
+
+function pedirRedesURL() {
+}
+
+function inicial() {
+	
+	var x = document.getElementById("formIp");
+	x.onsubmit= function (){ return validaFormulIp()};
+}
+
+window.onload = inicial;
+

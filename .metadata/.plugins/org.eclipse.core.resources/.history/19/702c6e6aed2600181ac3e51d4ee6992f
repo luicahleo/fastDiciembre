@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Array 1</title> 
+</head>
+<body>
+<script>
+"use strict";
+var i;
+var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", 
+			"Junio", "Julio", "Agosto", "Septiembre", "Octubre",
+			"Noviembre", "Diciembre"];
+for (i=0; i<meses.length; i++)
+  document.write("meses[",i,"]=",meses[i],"<br/>");
+
+document.write("<br/>", meses.join("_"), "<br/><br/>");
+
+for (i=0; i<meses.length; i++)
+  document.write("meses[",i,"]=",meses[i],"<br/>");
+</script>
+</body>
+</html>

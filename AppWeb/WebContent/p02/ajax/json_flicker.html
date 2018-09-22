@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>img{ height: 120px; float: left; }</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+  <div id="images">
+ 
+</div>
+<script>
+/* Formato de la respuesta
+({   	"title": "Talk On Travel Pool",
+		"link": "http://www.flickr.com/groups/talkontravel/pool/",
+		"description": "Travel and vacation photos from around the world, .. ",
+		"modified": "2009-02-02T11:10:27Z",
+		"generator": "http://www.flickr.com/",
+		"items": [
+	   {
+			"title": "View from the hotel",
+			"link": "http://www.flickr.com/photos/33112458@N08/3081564649/in/pool-998875@N22",
+			"media": {"m":"http://farm4.staticflickr.com/3037/3081564649_4a6569750c_m.jpg"},
+			"date_taken": "2008-12-04T04:43:03-08:00",
+			"description": "..... ",
+			"published": "2008-12-04T12:43:03Z",
+			"author": "nobody@flickr.com (Talk On Travel)",
+			"author_id": "33112458@N08",
+			"tags": "spain dolphins tenerife loscristines talkontravel"
+	   },
+	   {
+			"title": "The dolphin show",
+			"link": "http://www.flickr.com/photos/33112458@N08/3082405698/in/pool-998875@N22",
+			"media": {"m":"http://farm4.staticflickr.com/3211/3082405698_fe4a93b5fd_m.jpg"},
+			"date_taken": "2008-12-04T12:18:47-08:00",
+			"description": "....",
+			"published": "2008-12-04T12:43:04Z",
+			"author": "nobody@flickr.com (Talk On Travel)",
+			"author_id": "33112458@N08",
+			"tags": "spain dolphins tenerife canaries losgigantos loscristines talkontravel"
+	   },
+
+*/
+$(document).ready(function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "spain beach",
+    tagmode: "all", /* any basta laguna de las etiquetas, all todas  */
+    format: "json"
+  })
+  .done(function( data ) {
+    $.each( data.items, function( i, item ) {
+      $( "<img/>" ).attr( "src", item.media.m ).appendTo( "#images" );
+      if ( i === 10 ) {
+        return false;
+      }
+    });
+  });
+});
+</script>
+ 
+</body>
+</html>

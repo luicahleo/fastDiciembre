@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+</head><body>
+<p>Este ejemplo usa el método addEventListener() para añadir múltiples eventos al mismo botón.</p>
+
+<button id="Boton1">Pruebe</button>
+<button id="Boton2" onclick="f5()">Pruebe a quitar el alert</button>
+
+<p id="vacio"></p>
+
+<script>
+"use strict";
+var x = document.getElementById("Boton1");
+x.addEventListener("mouseover", f1);
+x.addEventListener("click", f2);
+x.addEventListener("click", f3);
+x.addEventListener("mouseout", f4);
+
+function f1() {
+    document.getElementById("vacio").innerHTML += "Evento mouseover<br />";
+}
+
+function f2() {
+    document.getElementById("vacio").innerHTML += "Evento click<br />";
+}
+
+function f3() {
+    alert("Evento click: Ha pulsado el botón");
+}
+function f4() {
+    document.getElementById("vacio").innerHTML += "Evento mouseout<br />";
+}
+function f5() {
+	x.removeEventListener("click", f3);
+	// código para quitar f3 del evento click en botón 1
+}
+</script>
+
+
+</body>
+</html>

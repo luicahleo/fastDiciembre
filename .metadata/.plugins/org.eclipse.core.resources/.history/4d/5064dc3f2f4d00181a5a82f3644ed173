@@ -1,0 +1,104 @@
+// funUsu.js 
+"use strict";
+
+function validaFormuUsu() {
+	
+	var lonMin = 6;
+    var minNum = 2;
+    var minMayus = 2;
+    var minMinus = 2;
+    var nomUsu = document.getElementById("usu").value;
+    var pass = document.getElementById("contra1").value;
+    var pass2 = document.getElementById("contra2").value;
+    var comprueba = compruebaContra(pass, lonMin, minNum, minMayus, minMinus, nomUsu);
+  
+    switch(comprueba){
+    case 0:
+    	if(pass != pass2){
+  		alert("Error: contraseña debe ser igual en los dos campos");
+  		return false;}
+  		break;
+	case -1:
+		alert("Error: debe tener una longitud mínima de 6 caracteres");
+	    return false;
+	    break;
+	case -2:
+		alert("Error: debe contener al menos dos caracteres numéricos");
+	    return false;
+	    break;
+	case -3:
+		alert("Error: debe contener al menos dos caracteres en mayúsculas");
+	    return false;
+	    break;
+	case -4:
+		alert("Error: debe contener al menos dos caracteres en minúsculas");
+	    return false;
+	    break;
+	case -5:
+		alert("Error: no debe contener el nombre de usuario");
+	    return false;
+	    break;
+	default:
+		return true;
+	}
+		
+}
+
+function compruebaContra(pass, lonMin, minNum, minMayus, minMinus, nomUsu) {
+	
+	var nomUsu = document.getElementById("usu").value;
+    var pass = document.getElementById("contra1").value;
+    var pass2 = document.getElementById("contra2").value;
+    
+    var numeros=0;
+	var mayusculas=0;
+	var minusculas=0;
+	
+	
+	for(var i=0;i<pass.lenght();i++){
+		if(0<=i<=9)
+			numeros++;
+		if(A<=i<=Z)
+			mayusculas++;
+		if(a<=i<=z)
+			minusculas++;
+		
+		
+	}
+	
+	
+	/*var numNumero = pass.match(/[0-9]/g);//sacamos un array con la cantidad de numeros que tiene la pass
+	var numMayus = pass.match(/[A-Z]/g);//sacamos un array con la cantidad de Mayusculas que tiene la pass
+	var numMinus = pass.match(/[a-z]/g);//sacamos un array con la cantidad de Minusculas de la pass
+	
+
+	if(Array.isArray(numMayus))				
+		numMayus = numMayus.length;
+
+	if(Array.isArray(numMinus))
+		numMinus = numMinus.length;
+*/
+
+	if (pass.length < lonMin)
+		return -1;
+    else if(minNum > numeros)
+	    return -2;
+    else if(minMayus > mayusculas)
+	    return -3;
+    else if(minMinus > minusculas)
+	    return -4;
+    else if(pass.includes(nomUsu))
+	    return -5;
+    else
+	    return 0;
+}
+
+function inicial() {
+	
+	var x = document.getElementById("formUsu");
+	x.onsubmit= function (){ return validaFormuUsu()};
+}
+
+window.onload = inicial;
+
+

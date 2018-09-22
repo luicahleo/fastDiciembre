@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;AppTrabajo/WebContent/admin/js/funIp.js&apos; to &apos;funIpGuille.js&apos;" description="Rename resource &apos;funIp.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/admin/js/funIp.js" name="funIpGuille.js" stamp="1527956516367" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;AppTrabajo/WebContent/admin/js/funIp MIO.js&apos; to &apos;funIp.js&apos;" description="Rename resource &apos;funIp MIO.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/admin/js/funIp MIO.js" name="funIp.js" stamp="1527956526566" updateReferences="true"/>
+</session>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 54 DOM</title>
+<script>
+"use strict";
+function CambiaEstilo() {
+  var parrafos = document.getElementsByTagName("p");
+  for(var i=0; i<parrafos.length; i++) {
+	parrafos[i].style.border="solid thick blue"; 
+	parrafos[i].style.backgroundColor="yellow"; 
+  }
+}
+</script>
+</head>
+<body>
+<p id="primero"> primer elemento p
+  <a href="http://www.google.es">enlace a Google</a> y
+  <a href="http://www.us.es">US</a>
+</p>
+<p id="segundo"> segundo  elemento p </p>
+<input type="button" onclick="CambiaEstilo()" value="Cambia Estilo" />
+</body>
+</html>
+
+ 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+"use strict";
+function getCookie(c_name)
+{
+  var c_value = document.cookie;
+  var c_start = c_value.indexOf(" " + c_name + "=");
+  if (c_start == -1)
+  {
+    c_start = c_value.indexOf(c_name + "=");
+  }
+  if (c_start == -1)
+  {
+    c_value = null;
+  }
+  else
+  {
+    c_start = c_value.indexOf("=", c_start) + 1;
+    var c_end = c_value.indexOf(";", c_start);
+    if (c_end == -1)
+    {
+      c_end = c_value.length;
+    }
+    c_value = unescape(c_value.substring(c_start,c_end));
+  }
+return c_value;
+}
+
+function setCookie(c_name,value,exdays)
+{
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+  document.cookie=c_name + "=" + c_value;
+}
+
+function checkCookie()
+{
+var username=getCookie("username");
+if (username!=null && username!="")
+  {
+  alert("Welcome again " + username);
+  }
+else 
+  {
+  username=prompt("Please enter your name:","");
+  if (username!=null && username!="")
+    {
+    setCookie("username",username,365);
+    }
+  }
+}
+</script>
+</head>
+<body onload="checkCookie()">
+<h1> Uso de javascript y cookies </h1>
+<p> La primera vez solicita el nombre del usuario, ya que detecta que al buscar la cookie con el valor username no existe o está vacío.
+En ese momento, guarda ese valor de nombre usuario como una cookie con una vigencia de un año. 
+</p>
+<p>
+Al volver a cargar la página se busca la cookie, y si tiene un valor
+inicial se muesta un mensaje de alerta con el valor de la misma (y ya
+no se solicita el nombre).
+</p>
+</body>
+</html>

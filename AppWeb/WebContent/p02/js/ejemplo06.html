@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> String </title> 
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+var saludo="Hola Alumnos de Fast"
+document.write(	"<br/>Saludo: ", saludo, 
+                "<br/>Propiedad length: ", saludo.length,
+                "<br/>Método toUpperCase(): ", saludo.toUpperCase(),
+                "<br/>Saludo: ", saludo, "<hr/>");
+				
+var cadena = new String("Hola Alumnos de Fast2");
+document.write(	"<br/>Cadena: ", cadena, 
+                "<br/>Propiedad length: ", cadena.length,
+                "<br/>Método toUpperCase(): ", cadena.toUpperCase(),
+                "<br/>Cadena: ", cadena, "<hr/>");
+// Uso de split
+document.write('cadena.split(): ' + cadena.split() + "<br />");
+document.write('cadena.split(" "): ' + cadena.split(" ") + "<br />");
+document.write('cadena.split(""): ' + cadena.split("") + "<br />");
+document.write('cadena.split(" ",3): ' + cadena.split(" ",3));
+
+// se usará en ejercicio posterior
+var user = "afast:x:1000:1000:afast,,,:/home/afast:/bin/bash";
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+#!/bin/sh
+# script para gerar una lista html a partir de la entrada
+# Uso: ls *.html | index-html.sh
+# El carácter & representa la entrada en sed
+
+echo '<ul>'
+sed 's/^.*/<li><a href="&">&<\/a><\/li>/'
+echo '</ul>'

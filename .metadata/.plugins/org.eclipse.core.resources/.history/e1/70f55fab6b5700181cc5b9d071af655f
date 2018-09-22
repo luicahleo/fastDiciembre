@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="../cabecera.jsp" %>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>IP</title>
+<link href="../css/estilos.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/funIp.js"></script>
+<script src="../cgi-bin/jscgi "></script>
+</head>
+
+<body id="contenedor">
+<h1>Gestión de IPs</h1>
+<p>Introducción de datos para dar de alta <span class="revisando">o comprobar existencia</span> direcciones IP.</p>
+
+<section class="col-2">
+<h2 class="entrada">Alta/comprobación IP</h2>
+
+<form method="get" name="formIp" id="formIp" action="modificarIp" method="post">
+<p><label>Dirección IP<br></label>
+<input name="ip" id="ip" type="text" size="16" maxlength="15" placeholder="A.B.C.D" required>
+<br></p>
+<p><label>Máscara:<br></label>
+<input name="mask" id="mask" type="number" min="8" max="30" value="24" required>
+<br></p>
+<p><label>Dirección IP pasarela<br></label>
+<input name="gw" id="gw" type="text" size="16" maxlength="15" value="192.168.1.1">
+<br></p>
+<p><input type="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
+</form>
+<p><button id="mostrar" type="button" value="Mostrar Redes"> Mostrar Redes </button></p> 
+
+</section>
+
+<section class="col-2">
+<h2 class="warning">Tabla redes</h2>
+<p>Esta tabla se rellena al pulsar el botón "Mostrar".</p>
+<p class="revisando">Se oculta pulsando el mismo botón, que cambia de texto. Al pulsar sobre las filas de la tabla
+se elimina.</p>
+<table>
+  <thead>
+  <tr>
+    <th>IP</th>
+    <th>Mask</th> 
+    <th>Gw</th>
+  </tr>
+  </thead>
+  
+  <tbody></tbody>
+</table>
+</section>
+
+<%@ include file="../pie.jsp" %>
+
+</body>
+</html>

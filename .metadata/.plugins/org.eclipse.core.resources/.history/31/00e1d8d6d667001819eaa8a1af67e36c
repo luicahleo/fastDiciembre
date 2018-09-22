@@ -1,0 +1,172 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletCrearUsuario
+ */
+//TODO MODIFICAR--Added
+
+@WebServlet(urlPatterns={"/admin/modificarUsuario"})//Para Acceder como usuario ó Admin, el asterisco es necesario?
+
+public class ServletModificarUsuario extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private static final int LON_MIN = 6;
+	private static final int LON_MAX = 10;
+	private static final int MIN_MAYUSCULAS = 2;
+	private static final int MIN_MINUSCULAS = 2;
+	private static final int MIN_NUMERICOS = 2;
+	private static final int LON_MAX_USU = 11;
+
+	/**
+	 * Verifica que la contraseña y el usuario cumplen los requisitos
+	 * @param pass
+	 * @param usu
+	 * @return Verdadero si cumple.
+	 */
+	private boolean compruebaContraUsu(String pass, String usu) {//whats it's suppossed to do?
+		boolean res = false;
+		int numericos = 2;
+		int mayusculas = 2;
+		int minusculas = 2;
+
+		// TODO MODIFICAR //From Pedro with love
+	        int i = 0;
+	        if ((pass.length() >= LON_MIN )&&(pass.length() <= LON_MAX)) {//Comprobamos que la contraseña tiene una longitud acotada
+	          for (i = 0; i < pass.length();i++) {//Un for que recorra la longitud de la pass
+	              if (Character.isLowerCase(pass.charAt(i))){//CharAt sirve para acceder a los carácteres de una tabla
+	                  minusculas++;							 //El Character inicial es necesario para avisar a isLowerCase etc
+	              }
+	              else if (Character.isUpperCase(pass.charAt(i))){
+	                  mayusculas++;
+	              }
+	              else if (Character.isDigit(pass.charAt(i))){
+	                  numericos++;
+	              }
+	          }
+	          if((minusculas>= MIN_MINUSCULAS)&&(mayusculas>= MIN_MAYUSCULAS)&&(numericos>= MIN_NUMERICOS)&&(!(pass.contains(usu)))&&(usu.length()<= LON_MAX_USU)){
+	              res = true;
+	          }
+	        }
+	        return res;
+	}
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletModificarUsuario() {
+        super();
+
+    }
+
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	 //Recibe los parámetros del formulario de usuForm.jsp, y se debe comprobar que cumplen las mismas condiciones que en el formulario (ahora en el servidor las comprobaciones se hacen en java).
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String usu = request.getParameter("usu");
+		String contra1 = request.getParameter("contra1");
+		String contra2 = request.getParameter("contra2");
+		boolean error = false;
+		String mensaje = "";
+		if (usu!= null && contra1!=null && contra2!=null
+				&& !usu.isEmpty() && !contra1.isEmpty() && !contra2.isEmpty()//Comprueba si los campos están vacíos, todos.
+				&& contra1.equals(contra2)//que las dos contraseñas sean iguales
+				&& compruebaContraUsu(contra1, usu))//comprueba que el usuario no está dentro de la contraseña y que cumplen las condiciones necesarias
+		{
+			boolean usuExiste = false;
+			String sql;
+			try {
+				DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");//Consigue el atributo ds(DataBase) del contexto de ¿aplicación? I think
+				Connection conn = ds.getConnection();
+
+				//Obtener si el usuario existe
+				sql = "SELECT id_usuario FROM usuarios WHERE id_usuario=?";
+				PreparedStatement pst = conn.prepareStatement(sql);
+				pst.setString(1, usu);//¿Por qué hay que cerrarlo?
+				ResultSet rs = pst.executeQuery();
+				if (rs.next()) {//Si la peticion a la BD devuelve algo...
+					usuExiste = true;
+				}
+				rs.close();
+				pst.close();//hay que cerrarlo;
+
+				//Realizar la operación
+				if (usuExiste) {
+					//Actualizar contraseña de usuario
+					// TODO MODIFICAR---->Modificado
+					sql = "UPDATE usuarios SET password = ? WHERE id_usuario = ? ";//Insertar la nueva contraseña en el usuario dado;
+					PreparedStatement st = conn.prepareStatement(sql);
+					st.setString(1, contra1);
+					st.setString(2, usu);
+					int rows = st.executeUpdate();
+					
+					if (rows == 1) {////////////////////////////////////////////////////////////
+						//Modificación correcta/////?¿?¿?¿?¿?¿?¿?¿?¿?
+					} else {
+						error = true;
+						mensaje = "Error modificando la contraseña";
+					}
+					st.close();
+				} else {//Crea un usuario nuevo si usuExiste==false, no existe usuario
+					//Crear usuario cliente con su contraseña
+					sql = "INSERT INTO usuarios VALUES (?,?,?)";
+					PreparedStatement st = conn.prepareStatement(sql);
+					st.setString(1, usu);
+					st.setString(2, contra1);
+					st.setInt(3, Usuario.CLIENTE);
+					int rows = st.executeUpdate();
+					if (rows == 1) {///////////////////////////////////////////////////////////
+						//Creación correcta
+					} else {
+						error = true;
+						mensaje = "Error creando el usuario";
+					}
+					st.close();
+				}
+
+			} catch (SQLException e) {
+				error = true;
+				mensaje = "Error creando el usuario";
+			}
+		} else {//Si alguno de los campos están vacío, o las contraseñas no son iguales o la contraseña tiene incluida al usuario
+			error = true;
+			mensaje = "Error en los datos del usuario.";
+		}
+
+		if (error) {//"Si hay algún error debe reenviar la petición a la página de error (error.jsp), estableciendo previamente
+								//dos atributos de petición de nombres “mensaje” y “volverURL”."
+			// TODO MODIFICAR-->Modified
+			request.setAttribute("mensaje", mensaje );//El atributo mensaje debe ser del valor de la variable mensaje
+			request.setAttribute("volverURL", "usuForm.jsp");//Desde qué pagina se accede a éste Servlet?==Este servlet es accedido a través de la página verCrearInterfaces.jsp, está en usuarios(Folder)
+			request.getRequestDispatcher("../clientes/error.jsp").forward(request, response);
+		} else {//Si todo es correcto y la modificación/creación se efectúa correctamente,
+			 			//debe redirigir el navegador a la página de “Ver usuarios”.
+
+						request.getRequestDispatcher("verUsuarios.jsp").forward(request, response);//OK??
+
+			// TODO COMPLETAR-->completado
+
+		}
+
+	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+
+	}
+
+}

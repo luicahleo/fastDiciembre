@@ -1,0 +1,29 @@
+// funIp.js
+"use strict";
+
+function procesaIp(cadena) {
+}
+
+function ipToBin(cadena) {
+}
+
+function validaFormulIp() {
+}
+
+
+function creaFila(ip) {
+}
+
+function mostrarRedes(redes) {
+}
+
+function pedirRedesURL() {
+}
+
+function inicial() {
+	var valido = validaFormulIp()
+	return valido;	
+}
+
+window.onload = inicial;
+

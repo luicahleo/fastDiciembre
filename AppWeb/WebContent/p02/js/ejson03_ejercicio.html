@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo json 03 ejercicio</title>
+</head>
+<body>
+<h2>Crear objeto desde cadena JSON </h2>
+<p>
+Nombre: <span id="nombre"></span><br> 
+Apellido: <span id="apellido"></span><br> 
+Edad: <span id="edad"></span><br> 
+</p> 
+<script>
+var txt = ' {"empleados":[' +
+'{"nombre":"John","apellido":"Doe", "edad": 32 },' +
+'{"nombre":"Anna","apellido":"Smith" , "edad": 27 },' +
+'{"nombre":"Peter","apellido":"Jones", "edad": 41 }]} ';
+
+alert("parse de la cadena JSON y usamos el objeto creado");
+obj = JSON.parse(txt);
+
+document.getElementById("nombre").innerHTML=obj.empleados[1].nombre;
+document.getElementById("apellido").innerHTML=obj.empleados[1].apellido;
+document.getElementById("edad").innerHTML=obj.empleados[1].edad;
+
+document.write("<p> typeof obj= " + typeof obj + "</p>");
+document.write("<p> typeof obj.empleados= " + typeof obj.empleados + "</p>");
+document.write("<p> obj.empleados.length=" + obj.empleados.length + "</p>");
+document.write("<p> typeof obj.empleados[1]= " + typeof obj.empleados[1] + "</p>");
+document.write("<p> typeof obj.empleados[1].nombre= " + typeof obj.empleados[1].nombre + "</p>");
+
+document.write("<p> bucle for (i=0; i&lt;obj.empleados.length;i++)  obj.empleados.length=" + obj.empleados.length + "<br/>");
+for (i=0; i<obj.empleados.length;i++) {
+  document.write("i=" + i + " " + 
+		         obj.empleados[i].nombre + " " + 
+                 obj.empleados[i].apellido  + ", edad  " +
+				 obj.empleados[i].edad + "<br/>");
+}
+document.write("</p>");
+
+document.write("<p>");
+for (i in obj.empleados) {
+  document.write("i=" + i + " " + 
+		         obj.empleados[i].nombre + " " + 
+                 obj.empleados[i].apellido  + ", edad  " +
+	             obj.empleados[i].edad + "<br/>");
+}
+document.write("obj.empleados.length=" + obj.empleados.length + "<br/>");
+document.write("</p>");
+  
+//  document.write(obj.empleados[i].nombre + "<br/> " ); 
+/*
+for (i=0; i<obj.empleados.length;i++) {
+  document.write(obj.empleados[i].nombre + " " + 
+                 obj.empleados[i].apellido  + ", edad  " +
+				 obj.empleados[i].edad + "<br/>");
+}
+*/
+
+</script>
+
+
+</body>
+</html> 

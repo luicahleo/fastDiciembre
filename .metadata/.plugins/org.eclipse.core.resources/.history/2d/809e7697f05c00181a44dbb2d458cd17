@@ -1,0 +1,15 @@
+//TODO BORRAR Y CREAR NUEVO
+package fast1718.trabajo;
+
+public class Usuario{
+	private String usu;
+	private String contra;
+	private int tipo_usu;
+	
+	public Usuario(){
+		
+	}
+	public static final int ADMINISTRADOR = 0;
+	public static final int CLIENTE = 1;
+	
+}	

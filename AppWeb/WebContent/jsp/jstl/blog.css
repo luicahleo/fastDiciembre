@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+/*FJFJ*/
+
+#tituloCabecera {
+	background-color: #339933;
+	color: #FFFF00;
+	border-bottom: 4px dotted #FFFF00;
+	padding: 10px;
+	margin: 0;
+}
+#creditos {
+	font-size: 0.8em;
+	font-style: italic;
+}
+.titulo {
+	color: #339933
+}
+.autor, .fecha {
+	font-size: 0.9em;
+	font-style: italic;
+}
+#volver, #tituloEntrada {
+	color: #339933;
+}
+#infoEntrada {
+	text-align: right;
+	font-size: 0.9em;
+	font-style: italic;
+}
+#volver {
+	font-size: 0.7em;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	color: #070;
+}
+
+#historial h2 {
+	font-size: 1em;
+	padding-top: 3em;
+}
+
+#historial a {
+	font-size: 0.75em;	
+}

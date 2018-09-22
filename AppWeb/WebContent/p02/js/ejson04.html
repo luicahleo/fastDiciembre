@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo json 04 </title>
+</head>
+<body>
+<h2>Crear objeto desde cadena JSON </h2>
+<p>
+Nombre: <span id="nombre"></span><br> 
+Apellido: <span id="apellido"></span><br> 
+Edad: <span id="edad"></span><br> 
+</p> 
+<script>
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+var x = person.length;         // person.length will return 3
+var y = person[0];             // person[0] will return "John"
+
+document.write("<p> typeof person= " + typeof person + "</p>");
+document.write("<p> person.length=" + person.length + "</p>");
+/*
+document.write("<p> typeof person.empleados= " + typeof person.empleados + "</p>");
+document.write("<p> person.empleados.length=" + person.empleados.length + "</p>");
+document.write("<p> typeof person.empleados[1]= " + typeof person.empleados[1] + "</p>");
+document.write("<p> typeof person.empleados[1].nombre= " + typeof person.empleados[1].nombre + "</p>");
+*/
+
+</script>
+
+
+</body>
+</html> 

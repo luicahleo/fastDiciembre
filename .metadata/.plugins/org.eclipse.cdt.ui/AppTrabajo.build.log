@@ -1,0 +1,7 @@
+18:30:11 **** Incremental Build of configuration Default for project AppTrabajo ****
+make all 
+cp WebContent/WEB-INF/cgi/* ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi
+chmod +x ~/tomcat/webapps/AppTrabajo/WEB-INF/cgi/*
+
+18:30:12 Build Finished (took 1s.138ms)
+

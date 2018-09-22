@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+/*FJFJ*/
+
+/* Este ejemplo incluye código CSS3 */
+
+body {
+	text-align: center;
+	margin: auto;
+}
+
+#acceso {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #64c8ef; /* navegadores antiguos */
+	background: linear-gradient(to bottom,  #64c8ef 0%,#00a2e2 100%); /* W3C */
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 10px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	width: 550px;
+	margin: auto !important;
+	margin-top: 100px !important;
+}
+
+input[type=submit]{
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #44586f; /* navegadores antiguos */
+	color: #fff;
+	padding: 5px 15px;
+	margin-right: 0;
+	margin-top: 15px;
+	border-radius: 3px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+input[type=submit]:hover{
+	background: #24283f; /* navegadores antiguos */
+}
+
+
+#loginExito {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #00CC00; /* navegadores antiguos */
+	background: linear-gradient(to bottom,  #00CC00 0%,#80E680 100%); /* W3C */
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 10px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	width: 550px;
+	margin: auto !important;
+	margin-top: 100px !important;
+}
+
+#loginError {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #CC0000; /* navegadores antiguos */
+	background: linear-gradient(to bottom,  #CC0000 0%,#E68080 100%); /* W3C */
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 10px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	width: 550px;
+	margin: auto !important;
+	margin-top: 100px !important;
+}
+
+#cabecera form {
+	float: right;
+}
+
+#cuerpo {
+	clear: both;
+}
+
+#verPistas {
+	font-size: 0.5em;
+	cursor: pointer;
+	border: 1px solid white;
+}
+
+#pistas {
+	display: none;
+	font-size: 0.7em;
+	width: 500px;
+	margin: auto !important;
+}
+

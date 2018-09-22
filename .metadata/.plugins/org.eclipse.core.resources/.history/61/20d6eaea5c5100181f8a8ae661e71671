@@ -1,0 +1,64 @@
+// funIp.js
+"use strict";
+
+function procesaIp(cadena) {
+	
+	var cadena=cadena.toString();
+	var str=cadena.trim();
+	var ip=str.split('.');
+	
+	if(ip.length!=4)
+		resultado= -1;
+	
+	for(var i=0; i<ip.length; i++){
+		var numero = ip[i].match(/[0-9]/g);
+		if (numero.length!=ip[i].length)
+			resultado= -2;
+	}
+	
+	return resultado;
+}
+
+function ipToBin(cadena) {
+	
+  var ip=cadena.split('.');//ip=array de los elementos que hay separados por puntos
+  var res="";
+  
+  for(var i=0; i<ip.length; i++){
+	  ip[i]=(parseInt(ip[i])).toString(2).padStart(8,0);//paso a binario
+	  ip[i]=ip[i].toString();//lo paso a cadena
+      res=res.concat(ip[i]);//lo concateno con los resultados anteriores
+  }
+  return res;
+}	
+	
+/*	var a = num.toString(2);
+	var b = num.toString(2);
+	var c = num.toString(2);
+	var d = num.toString(2);
+	
+	n= a + b + c + d;
+	
+	return n;*/
+
+function validaFormulIp() {
+}
+
+
+function creaFila(ip) {
+}
+
+function mostrarRedes(redes) {
+}
+
+function pedirRedesURL() {
+}
+
+function inicial() {
+	
+	var x = document.getElementById("formIp");
+	x.onsubmit= function (){ return validaFormulIp()};
+}
+
+window.onload = inicial;
+

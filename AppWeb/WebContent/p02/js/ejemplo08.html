@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Operador igualdad</title> 
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+var x=5;
+var y="5";
+if ( x == y )
+  document.write('<br />x que vale ', x, ' de tipo ', typeof x, 
+		         ' es igual(==) a y que vale ', y , ' de tipo ', typeof y);
+else
+  document.write('<br />x que vale ', x, ' de tipo ', typeof x, 
+	             ' NO es igual(==) a y que vale ', y , ' de tipo ', typeof y);
+document.write('<hr />')	    
+if ( x === y )
+  document.write('<br />x que vale ', x, ' de tipo ', typeof x, 
+	             ' es igual(===) a y que vale ', y , ' de tipo ', typeof y);
+else
+  document.write('<br />x que vale ', x, ' de tipo ', typeof x, 
+                 ' NO es igual(===) a y que vale ', y , ' de tipo ', typeof y);
+</script>
+</body>
+</html>
+

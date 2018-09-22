@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo 53 DOM</title>
+<script>
+"use strict";
+function CambiaEstilo() {
+  var parrafo = document.getElementById("segundo");
+  parrafo.style.border="solid thick blue"; 
+  parrafo.style.backgroundColor="yellow"; 
+}
+</script>
+</head>
+<body>
+<p id="primero"> primer elemento p
+  <a href="http://www.google.es">enlace a Google</a> y <a href="http://www.us.es">US</a>
+</p>
+<p id="segundo"> segundo  elemento p </p>
+<input type="button" onclick="CambiaEstilo()" value="Cambia Estilo" />
+</body>
+</html>
+
+ 

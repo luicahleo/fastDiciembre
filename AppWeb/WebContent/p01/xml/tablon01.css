@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+ tablon {  counter-reset: contador;}  
+
+anuncio {  display: block;  border-bottom: blue solid; }
+  
+
+anuncio:after{ 
+ content: "cod: " attr(codigo);
+} 
+
+
+
+fecha:before {
+  content: counter(contador, lower-roman) ". ";
+  counter-increment: contador;
+}
+
+
+asunto, texto {
+  display: block-inline;
+}
+
+fecha, precio, contacto {
+  display: block;
+}
+asunto, texto,  precio, contacto { margin-left: 15px;}
+fecha { color: blue;}
+precio { color: red; font-weight: bold;
+}

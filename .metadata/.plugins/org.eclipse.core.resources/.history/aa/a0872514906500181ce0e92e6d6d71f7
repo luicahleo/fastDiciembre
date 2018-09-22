@@ -1,0 +1,109 @@
+package fast1718.trabajo;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ * Servlet implementation class ServletModificarIp
+ */
+//TODO MODIFICAR
+@WebServlet(urlPatterns={"/admin/modificarIp"})
+public class ServletModificarIp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletModificarIp() {
+        super();
+        
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean error = false;
+		String interfaz = request.getParameter("interfaz");
+		String equipo = request.getParameter("equipo");
+		String ip = request.getParameter("ip");
+		String mask = request.getParameter("mask");
+		String gw = request.getParameter("gw");
+		String mensaje="";
+		
+		try {
+			DataSource ds = (DataSource) request.getServletContext().getAttribute("ds");
+			Connection conn = ds.getConnection();
+			
+			
+			// Comprobar parámetros
+			if (ip == null || equipo == null || interfaz == null 
+				|| gw == null || mask == null 
+				|| ip.isEmpty() || equipo.isEmpty() || interfaz.isEmpty()
+				|| mask.isEmpty() || gw.isEmpty()
+				|| !OperacionesIP.checkGw(ip, mask, gw)) {
+				// Error comprobación datos
+				error = true;
+			} else {
+
+				// Realizar la operación
+				// TODO MODIFICAR
+				String sql = "UPDATE direcciones_IP SET ip=? AND masc=? AND ip_gw=? AND id_eq=? WHERE num_in=?";
+				PreparedStatement st = conn.prepareStatement(sql);
+				st.setString(1, ip);
+				st.setInt(2, Integer.parseInt(mask));
+				st.setString(3, gw);
+				st.setString(4, equipo);
+				st.setInt(5, Integer.parseInt(interfaz));
+				
+				int rows = st.executeUpdate();
+				if (rows == 1) {
+					mensaje="Nueva Ip asignada.";
+					//Correcto. puede que no haga falta agregarlo
+				} else {
+					error = true;
+					//Error. puede que no haga falta agregarlo
+					mensaje="Error asignando la nueva Ip";
+				}
+				st.close();
+				conn.close();
+			}
+		} catch (Exception e) {
+			//Error
+			e.printStackTrace();
+			error = true;
+		}
+		
+		if (error) {
+			// TODO MODIFICAR
+			//String id_eq = request.getParameter("id_eq");
+			//String num_in = request.getParameter("num_in"); 
+			
+			request.setAttribute("mensaje", "Error asignando la nueva IP.");
+			request.setAttribute("volverURL", "/admin/ipForm.jsp?id_eq="+equipo+ "&num_in="+interfaz);
+			request.getRequestDispatcher("../clientes/error.jsp").forward(request, response);
+		} else {
+			// TODO COMPLETAR
+			request.getRequestDispatcher("asigIpIntSinAsignar.jsp").forward(request, response);
+
+		}
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Ejemplo uso de load </title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+<h1> Prueba de load </h1>
+
+<script>
+	function carga() {
+	   $("#noticias-esi").load('noticias.php #novedades') ;
+	}
+	document.write("Hora carga de página html: " + Date()+ "<hr/>");
+	window.setInterval(carga, 8000);
+</script>
+
+<div id="noticias-esi" style="height: 100px; overflow:auto;"> 
+</div>
+
+<div id="pie"><hr/>
+  <p> Observe que el cuadro intermedio de novedades se va actulizando de forma periódica a partir de noticias.php, pero la página html no se recarga.</p>
+</div>
+
+</body>
+</html>
+
+

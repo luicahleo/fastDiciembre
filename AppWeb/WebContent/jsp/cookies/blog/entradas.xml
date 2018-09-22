@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.6.0_27" class="java.beans.XMLDecoder">
+	<object class="java.util.ArrayList">
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor de ejemplo</string>
+				</void>
+				<void property="contenido">
+					<string>&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;p&gt;</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Pellentesque habitant</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor de definiciones</string>
+				</void>
+				<void property="contenido">
+					<string>&lt;dl&gt;
+   &lt;dt&gt;Definition list&lt;/dt&gt;
+   &lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.&lt;/dd&gt;
+   &lt;dt&gt;Lorem ipsum dolor sit amet&lt;/dt&gt;
+   &lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.&lt;/dd&gt;
+&lt;/dl&gt;</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Definition list</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor de renombre</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;h2&gt;Header Level 2&lt;/h2&gt;
+	       
+&lt;ol&gt;
+   &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;Header Level 3&lt;/h3&gt;
+
+&lt;ul&gt;
+   &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+&lt;/ul&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Lorem ipsum</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis orci, facilisis et egestas sed, venenatis nec urna. Sed ut pretium purus, in iaculis odio. Curabitur facilisis turpis at luctus suscipit. Aenean lobortis eu nibh quis dictum. Nunc rhoncus tortor et placerat tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi dolor lectus, ullamcorper quis commodo a, hendrerit in ipsum. Integer ornare dignissim elit, eget tempus diam dictum id. Sed sed enim ut libero egestas tincidunt. Nulla tempus, metus quis dictum accumsan, diam lectus imperdiet lectus, sit amet egestas justo dui sed elit. Donec lacus enim, suscipit sed scelerisque sit amet, laoreet ut sem. Maecenas consequat faucibus neque, vitae bibendum ipsum ultrices quis. Suspendisse tincidunt libero a leo euismod, quis lobortis lorem sagittis. Morbi aliquet aliquet elementum. Vestibulum id nisi molestie, sagittis sapien in, placerat ligula. Mauris euismod id nulla quis semper.
+&lt;/p&gt;
+&lt;p&gt;
+Nulla euismod, &lt;strong&gt;libero ut pretium vulputate&lt;/strong&gt;, ipsum leo vulputate purus, sed ornare velit dolor at eros. Ut ut arcu quis nunc venenatis cursus nec et ipsum. Ut lobortis condimentum tortor. Phasellus placerat porttitor dapibus. Aenean rhoncus massa ac feugiat dictum. Morbi varius gravida nisl quis ultricies. Donec bibendum sagittis neque sit amet porttitor. Fusce fringilla odio eu velit lacinia, vel interdum nunc tempor. Maecenas eleifend eget lectus id blandit. In hac habitasse platea dictumst.
+&lt;/p&gt;
+&lt;p&gt;
+Curabitur nec magna vitae dolor tempor facilisis. Praesent quis luctus neque. Etiam metus sem, viverra luctus orci euismod, auctor viverra turpis. Donec a egestas sapien. Morbi sapien quam, adipiscing id laoreet gravida, pharetra id felis. Proin nunc nibh, commodo lacinia leo sed, semper ultricies odio. Nulla non augue justo. Praesent interdum neque tellus, sed scelerisque elit adipiscing nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere feugiat magna, quis tristique ligula ullamcorper vel. In hac habitasse platea dictumst. Phasellus venenatis adipiscing massa. Sed egestas dolor leo, sed posuere tellus posuere quis. Cras iaculis molestie risus nec tempor.
+&lt;/p&gt;
+&lt;p&gt;
+Etiam imperdiet augue in dolor luctus, in vulputate &lt;em&gt;mauris cursus&lt;/em&gt;. Vestibulum in diam luctus, eleifend lacus ac, bibendum libero. Aliquam faucibus ac est et feugiat. Donec eu sollicitudin leo. Donec sem turpis, vehicula quis diam in, pellentesque dapibus erat. Sed sagittis at tellus tristique cursus. Nulla vel augue interdum, facilisis sem quis, mollis augue. Pellentesque vestibulum quam ac sapien tincidunt luctus.
+&lt;/p&gt;
+&lt;p&gt;
+Morbi vitae cursus justo. &lt;code&gt;Duis iaculis tincidunt bibendum&lt;/code&gt;. Quisque pellentesque leo eget mi mattis semper ut quis lacus. Nam iaculis sit amet mauris et vehicula. Donec luctus molestie purus id egestas. Duis laoreet turpis vel sapien fermentum, et malesuada eros volutpat. Nullam ornare elementum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non quam libero. Vivamus vulputate ullamcorper gravida. Vivamus ac tortor non augue gravida tincidunt. Maecenas fermentum varius suscipit. Nulla lobortis orci quis velit posuere placerat. Sed in magna ac leo blandit aliquam at eu eros.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Lorem ipsum (extendido)</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis orci, facilisis et egestas sed, venenatis nec urna. Sed ut pretium purus, in iaculis odio. Curabitur facilisis turpis at luctus suscipit. Aenean lobortis eu nibh quis dictum. Nunc rhoncus tortor et placerat tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi dolor lectus, ullamcorper quis commodo a, hendrerit in ipsum. Integer ornare dignissim elit, eget tempus diam dictum id. Sed sed enim ut libero egestas tincidunt. Nulla tempus, metus quis dictum accumsan, diam lectus imperdiet lectus, sit amet egestas justo dui sed elit. Donec lacus enim, suscipit sed scelerisque sit amet, laoreet ut sem. Maecenas consequat faucibus neque, vitae bibendum ipsum ultrices quis. Suspendisse tincidunt libero a leo euismod, quis lobortis lorem sagittis. Morbi aliquet aliquet elementum. Vestibulum id nisi molestie, sagittis sapien in, placerat ligula. Mauris euismod id nulla quis semper.
+&lt;/p&gt;
+&lt;p&gt;
+Nulla euismod, &lt;strong&gt;libero ut pretium vulputate&lt;/strong&gt;, ipsum leo vulputate purus, sed ornare velit dolor at eros. Ut ut arcu quis nunc venenatis cursus nec et ipsum. Ut lobortis condimentum tortor. Phasellus placerat porttitor dapibus. Aenean rhoncus massa ac feugiat dictum. Morbi varius gravida nisl quis ultricies. Donec bibendum sagittis neque sit amet porttitor. Fusce fringilla odio eu velit lacinia, vel interdum nunc tempor. Maecenas eleifend eget lectus id blandit. In hac habitasse platea dictumst.
+&lt;/p&gt;
+&lt;p&gt;
+Curabitur nec magna vitae dolor tempor facilisis. Praesent quis luctus neque. Etiam metus sem, viverra luctus orci euismod, auctor viverra turpis. Donec a egestas sapien. Morbi sapien quam, adipiscing id laoreet gravida, pharetra id felis. Proin nunc nibh, commodo lacinia leo sed, semper ultricies odio. Nulla non augue justo. Praesent interdum neque tellus, sed scelerisque elit adipiscing nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere feugiat magna, quis tristique ligula ullamcorper vel. In hac habitasse platea dictumst. Phasellus venenatis adipiscing massa. Sed egestas dolor leo, sed posuere tellus posuere quis. Cras iaculis molestie risus nec tempor.
+&lt;/p&gt;
+&lt;p&gt;
+Etiam imperdiet augue in dolor luctus, in vulputate &lt;em&gt;mauris cursus&lt;/em&gt;. Vestibulum in diam luctus, eleifend lacus ac, bibendum libero. Aliquam faucibus ac est et feugiat. Donec eu sollicitudin leo. Donec sem turpis, vehicula quis diam in, pellentesque dapibus erat. Sed sagittis at tellus tristique cursus. Nulla vel augue interdum, facilisis sem quis, mollis augue. Pellentesque vestibulum quam ac sapien tincidunt luctus.
+&lt;/p&gt;
+&lt;p&gt;
+Morbi vitae cursus justo. &lt;code&gt;Duis iaculis tincidunt bibendum&lt;/code&gt;. Quisque pellentesque leo eget mi mattis semper ut quis lacus. Nam iaculis sit amet mauris et vehicula. Donec luctus molestie purus id egestas. Duis laoreet turpis vel sapien fermentum, et malesuada eros volutpat. Nullam ornare elementum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non quam libero. Vivamus vulputate ullamcorper gravida. Vivamus ac tortor non augue gravida tincidunt. Maecenas fermentum varius suscipit. Nulla lobortis orci quis velit posuere placerat. Sed in magna ac leo blandit aliquam at eu eros.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Copia (extendido)</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor 1</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis orci, facilisis et egestas sed, venenatis nec urna. Sed ut pretium purus, in iaculis odio. Curabitur facilisis turpis at luctus suscipit. Aenean lobortis eu nibh quis dictum. Nunc rhoncus tortor et placerat tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi dolor lectus, ullamcorper quis commodo a, hendrerit in ipsum. Integer ornare dignissim elit, eget tempus diam dictum id. Sed sed enim ut libero egestas tincidunt. Nulla tempus, metus quis dictum accumsan, diam lectus imperdiet lectus, sit amet egestas justo dui sed elit. Donec lacus enim, suscipit sed scelerisque sit amet, laoreet ut sem. Maecenas consequat faucibus neque, vitae bibendum ipsum ultrices quis. Suspendisse tincidunt libero a leo euismod, quis lobortis lorem sagittis. Morbi aliquet aliquet elementum. Vestibulum id nisi molestie, sagittis sapien in, placerat ligula. Mauris euismod id nulla quis semper.
+&lt;/p&gt;
+&lt;p&gt;
+Nulla euismod, &lt;strong&gt;libero ut pretium vulputate&lt;/strong&gt;, ipsum leo vulputate purus, sed ornare velit dolor at eros. Ut ut arcu quis nunc venenatis cursus nec et ipsum. Ut lobortis condimentum tortor. Phasellus placerat porttitor dapibus. Aenean rhoncus massa ac feugiat dictum. Morbi varius gravida nisl quis ultricies. Donec bibendum sagittis neque sit amet porttitor. Fusce fringilla odio eu velit lacinia, vel interdum nunc tempor. Maecenas eleifend eget lectus id blandit. In hac habitasse platea dictumst.
+&lt;/p&gt;
+&lt;p&gt;
+Curabitur nec magna vitae dolor tempor facilisis. Praesent quis luctus neque. Etiam metus sem, viverra luctus orci euismod, auctor viverra turpis. Donec a egestas sapien. Morbi sapien quam, adipiscing id laoreet gravida, pharetra id felis. Proin nunc nibh, commodo lacinia leo sed, semper ultricies odio. Nulla non augue justo. Praesent interdum neque tellus, sed scelerisque elit adipiscing nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere feugiat magna, quis tristique ligula ullamcorper vel. In hac habitasse platea dictumst. Phasellus venenatis adipiscing massa. Sed egestas dolor leo, sed posuere tellus posuere quis. Cras iaculis molestie risus nec tempor.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Muy interesante</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor 2</string>
+				</void>
+				<void property="contenido">
+					<string>
+&lt;p&gt;
+Curabitur nec magna vitae dolor tempor facilisis. Praesent quis luctus neque. Etiam metus sem, viverra luctus orci euismod, auctor viverra turpis. Donec a egestas sapien. Morbi sapien quam, adipiscing id laoreet gravida, pharetra id felis. Proin nunc nibh, commodo lacinia leo sed, semper ultricies odio. Nulla non augue justo. Praesent interdum neque tellus, sed scelerisque elit adipiscing nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere feugiat magna, quis tristique ligula ullamcorper vel. In hac habitasse platea dictumst. Phasellus venenatis adipiscing massa. Sed egestas dolor leo, sed posuere tellus posuere quis. Cras iaculis molestie risus nec tempor.
+&lt;/p&gt;
+&lt;p&gt;
+Etiam imperdiet augue in dolor luctus, in vulputate &lt;em&gt;mauris cursus&lt;/em&gt;. Vestibulum in diam luctus, eleifend lacus ac, bibendum libero. Aliquam faucibus ac est et feugiat. Donec eu sollicitudin leo. Donec sem turpis, vehicula quis diam in, pellentesque dapibus erat. Sed sagittis at tellus tristique cursus. Nulla vel augue interdum, facilisis sem quis, mollis augue. Pellentesque vestibulum quam ac sapien tincidunt luctus.
+&lt;/p&gt;
+&lt;p&gt;
+Morbi vitae cursus justo. &lt;code&gt;Duis iaculis tincidunt bibendum&lt;/code&gt;. Quisque pellentesque leo eget mi mattis semper ut quis lacus. Nam iaculis sit amet mauris et vehicula. Donec luctus molestie purus id egestas. Duis laoreet turpis vel sapien fermentum, et malesuada eros volutpat. Nullam ornare elementum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non quam libero. Vivamus vulputate ullamcorper gravida. Vivamus ac tortor non augue gravida tincidunt. Maecenas fermentum varius suscipit. Nulla lobortis orci quis velit posuere placerat. Sed in magna ac leo blandit aliquam at eu eros.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Exclusiva de cotilleo</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor 3</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis orci, facilisis et egestas sed, venenatis nec urna. Sed ut pretium purus, in iaculis odio. Curabitur facilisis turpis at luctus suscipit. Aenean lobortis eu nibh quis dictum. Nunc rhoncus tortor et placerat tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi dolor lectus, ullamcorper quis commodo a, hendrerit in ipsum. Integer ornare dignissim elit, eget tempus diam dictum id. Sed sed enim ut libero egestas tincidunt. Nulla tempus, metus quis dictum accumsan, diam lectus imperdiet lectus, sit amet egestas justo dui sed elit. Donec lacus enim, suscipit sed scelerisque sit amet, laoreet ut sem. Maecenas consequat faucibus neque, vitae bibendum ipsum ultrices quis. Suspendisse tincidunt libero a leo euismod, quis lobortis lorem sagittis. Morbi aliquet aliquet elementum. Vestibulum id nisi molestie, sagittis sapien in, placerat ligula. Mauris euismod id nulla quis semper.
+&lt;/p&gt;
+&lt;p&gt;
+Nulla euismod, &lt;strong&gt;libero ut pretium vulputate&lt;/strong&gt;, ipsum leo vulputate purus, sed ornare velit dolor at eros. Ut ut arcu quis nunc venenatis cursus nec et ipsum. Ut lobortis condimentum tortor. Phasellus placerat porttitor dapibus. Aenean rhoncus massa ac feugiat dictum. Morbi varius gravida nisl quis ultricies. Donec bibendum sagittis neque sit amet porttitor. Fusce fringilla odio eu velit lacinia, vel interdum nunc tempor. Maecenas eleifend eget lectus id blandit. In hac habitasse platea dictumst.
+&lt;/p&gt;
+&lt;p&gt;
+Morbi vitae cursus justo. &lt;code&gt;Duis iaculis tincidunt bibendum&lt;/code&gt;. Quisque pellentesque leo eget mi mattis semper ut quis lacus. Nam iaculis sit amet mauris et vehicula. Donec luctus molestie purus id egestas. Duis laoreet turpis vel sapien fermentum, et malesuada eros volutpat. Nullam ornare elementum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non quam libero. Vivamus vulputate ullamcorper gravida. Vivamus ac tortor non augue gravida tincidunt. Maecenas fermentum varius suscipit. Nulla lobortis orci quis velit posuere placerat. Sed in magna ac leo blandit aliquam at eu eros.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>No te lo vas a creer!!</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Autor Falso</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Este contenido también es falso :-)
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Hoax</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Cervantes</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;En un lugar de la Mancha...&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Inicio de nuevo libro</string>
+				</void>
+			</object>
+		</void>
+		<void method="add">
+			<object class="fast.EntradaBlog">
+				<void property="autor">
+					<string>Seudónimo</string>
+				</void>
+				<void property="contenido">
+					<string>
+					&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis orci, facilisis et egestas sed, venenatis nec urna. Sed ut pretium purus, in iaculis odio. Curabitur facilisis turpis at luctus suscipit. Aenean lobortis eu nibh quis dictum. Nunc rhoncus tortor et placerat tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi dolor lectus, ullamcorper quis commodo a, hendrerit in ipsum. Integer ornare dignissim elit, eget tempus diam dictum id. Sed sed enim ut libero egestas tincidunt. Nulla tempus, metus quis dictum accumsan, diam lectus imperdiet lectus, sit amet egestas justo dui sed elit. Donec lacus enim, suscipit sed scelerisque sit amet, laoreet ut sem. Maecenas consequat faucibus neque, vitae bibendum ipsum ultrices quis. Suspendisse tincidunt libero a leo euismod, quis lobortis lorem sagittis. Morbi aliquet aliquet elementum. Vestibulum id nisi molestie, sagittis sapien in, placerat ligula. Mauris euismod id nulla quis semper.
+&lt;/p&gt;
+&lt;p&gt;
+Nulla euismod, &lt;strong&gt;libero ut pretium vulputate&lt;/strong&gt;, ipsum leo vulputate purus, sed ornare velit dolor at eros. Ut ut arcu quis nunc venenatis cursus nec et ipsum. Ut lobortis condimentum tortor. Phasellus placerat porttitor dapibus. Aenean rhoncus massa ac feugiat dictum. Morbi varius gravida nisl quis ultricies. Donec bibendum sagittis neque sit amet porttitor. Fusce fringilla odio eu velit lacinia, vel interdum nunc tempor. Maecenas eleifend eget lectus id blandit. In hac habitasse platea dictumst.
+&lt;/p&gt;
+&lt;p&gt;
+Curabitur nec magna vitae dolor tempor facilisis. Praesent quis luctus neque. Etiam metus sem, viverra luctus orci euismod, auctor viverra turpis. Donec a egestas sapien. Morbi sapien quam, adipiscing id laoreet gravida, pharetra id felis. Proin nunc nibh, commodo lacinia leo sed, semper ultricies odio. Nulla non augue justo. Praesent interdum neque tellus, sed scelerisque elit adipiscing nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere feugiat magna, quis tristique ligula ullamcorper vel. In hac habitasse platea dictumst. Phasellus venenatis adipiscing massa. Sed egestas dolor leo, sed posuere tellus posuere quis. Cras iaculis molestie risus nec tempor.
+&lt;/p&gt;
+&lt;p&gt;
+Etiam imperdiet augue in dolor luctus, in vulputate &lt;em&gt;mauris cursus&lt;/em&gt;. Vestibulum in diam luctus, eleifend lacus ac, bibendum libero. Aliquam faucibus ac est et feugiat. Donec eu sollicitudin leo. Donec sem turpis, vehicula quis diam in, pellentesque dapibus erat. Sed sagittis at tellus tristique cursus. Nulla vel augue interdum, facilisis sem quis, mollis augue. Pellentesque vestibulum quam ac sapien tincidunt luctus.
+&lt;/p&gt;
+&lt;p&gt;
+Morbi vitae cursus justo. &lt;code&gt;Duis iaculis tincidunt bibendum&lt;/code&gt;. Quisque pellentesque leo eget mi mattis semper ut quis lacus. Nam iaculis sit amet mauris et vehicula. Donec luctus molestie purus id egestas. Duis laoreet turpis vel sapien fermentum, et malesuada eros volutpat. Nullam ornare elementum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non quam libero. Vivamus vulputate ullamcorper gravida. Vivamus ac tortor non augue gravida tincidunt. Maecenas fermentum varius suscipit. Nulla lobortis orci quis velit posuere placerat. Sed in magna ac leo blandit aliquam at eu eros.
+&lt;/p&gt;
+					</string>
+				</void>
+				<void property="fecha">
+					<object class="java.util.Date">
+						<long>1396779173329</long>
+					</object>
+				</void>
+				<void property="titulo">
+					<string>Noticia importante</string>
+				</void>
+			</object>
+		</void>
+	</object>
+</java>

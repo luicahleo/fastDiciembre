@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+"use strict";
+function AnadeElemento () {
+// Crear nodo de tipo Element
+var parrafo = document.createElement("p");
+// Crear nodo de tipo Text
+var contenido = document.createTextNode("Nuevo párrafo tras pulsar botón");
+// Añadir el nodo Text como hijo del nodo Element
+parrafo.appendChild(contenido);
+// Añadir el nodo Element como hijo de la pagina
+document.body.appendChild(parrafo);
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="AnadeElemento()" value="Añade párrafo"/>
+
+<p>Párrafo inicial. Al pulsar sobre el botón se añadirán 
+nuevos párrafos a la página.</p>
+
+</body>
+</html> 

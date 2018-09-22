@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ejemplo 02: FAST</title>
+</head>
+<body>
+<h1> Ejemplo 02: FAST</h1>
+<h2> Etiquetas tratamiento de texto </h2>
+<p> las anteriores son etiquetas h1 y h2. 
+si quiere usar &lt; y &gt; debo usar entidades, 
+por ejemplo para mostrar &lt;p&gt;</p>
+<p> este segundo  párrafo será corto </p>
+<p> A pesar de ello el siguiente párrafo comienza debajo
+ya que es p un elemento de bloque</p>
+<p> Y si observa el código fuente
+
+ observará en este cuarto  
+párrafo               cómo
+
+
+se tratan los espacios     en             blanco
+en                HTML.</p>
+
+<p> En este último párrafo observe cómo delimitamos 
+con la  <em> etiqueta em </em> y <strong> etiqueta strong </strong>. 
+Son elementos de línea, y el navegador por defecto usa cursiva y negrita </p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Formulario cv: FAST</title>
+</head>
+<body>
+
+<h1> Formulario ejemplo</h1>
+<form action="formulario_cv_verdatos.jsp" method="get">
+
+Nombre <br/>
+<input type="text" name="nombre" /> <br/>
+Apellidos <br/>
+<input type="text" name="apellidos" /><br/>
+Contraseña <br/>
+<input type="password" name="contrasena"/><br/>
+<br/> 
+Sexo <br/>
+<input type="radio" name="sexo" value="hombre" 
+   checked="checked" /> Hombre <br/>
+<input type="radio" name="sexo" value="mujer" />
+Mujer <br/>
+<br/>
+Incluir mi foto 
+<input type="file" name="foto" /><br/>
+<br/>
+
+Empleo:
+<select name="empleo" id="lista">
+<option value="" selected>-Selecciona una-</option>
+<option value="Estudiante">Estudiante</option>
+<option value="Ingeniero">Ingeniero</option>
+<option value="Funcionario">Funcionario</option>
+<option value="NS/NC">No sabe/no contesta</option>
+</select>
+<br/>
+
+<input name="suscribir" type="checkbox" 
+value="suscribir" checked="checked"/> 
+Suscribirme al boletín de novedades<br/>
+<br/>
+ 
+<input type="submit" name="enviar" 
+    value="Enviar cambios" />
+<input type="reset" name="limpiar" 
+    value="Borrar datos introducidos" />
+</form>
+
+</body>
+</html>

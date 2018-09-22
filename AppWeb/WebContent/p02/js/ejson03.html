@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo json 03</title>
+</head>
+<body>
+<h2>Crear objeto desde cadena JSON </h2>
+<p>
+Nombre: <span id="nombre"></span><br> 
+Apellido: <span id="apellido"></span><br> 
+Edad: <span id="edad"></span><br> 
+</p> 
+<script>
+var txt = ' {"empleados":[' +
+'{"nombre":"John","apellido":"Doe", "edad": 32 },' +
+'{"nombre":"Anna","apellido":"Smith" , "edad": 27 },' +
+'{"nombre":"Peter","apellido":"Jones", "edad": 41 }]} ';
+
+alert("parse de la cadena JSON y usamos el objeto creado");
+obj = JSON.parse(txt);
+
+var i;
+for(i=0; i<txt.lenght; i++){
+document.getElementById("nombre").innerHTML=obj.empleados[i].nombre;
+document.getElementById("apellido").innerHTML=obj.empleados[i].apellido;
+document.getElementById("edad").innerHTML=obj.empleados[i].edad;
+}
+</script>
+
+
+</body>
+</html> 

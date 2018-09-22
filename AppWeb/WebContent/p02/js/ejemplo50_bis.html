@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+<ul id="lista1">
+  <li>ram</li>
+  <li>cpu</li>
+</ul>
+
+<p>Pulse el botón para coger el contido del elemento ul.</p>
+
+<button onclick="cogeLista()">Pruebe</button>
+
+<p id="vacio"></p>
+
+<script>
+function cogeLista() {
+    var x = document.getElementById("lista1").textContent;
+    document.getElementById("vacio").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

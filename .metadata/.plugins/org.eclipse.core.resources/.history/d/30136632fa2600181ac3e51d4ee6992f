@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Ejemplo 15 Popboxes</title>
+</head>
+<body>
+<script type="text/javascript">
+"use strict";
+var x;
+var y;
+var r=confirm("clic en uno de los dos botones");
+if (r==true)  {
+  alert("Pulsó Si");
+  }
+else {
+  alert("Pulsó No");
+  }
+document.write("El valor de r es: ", r, "<br/>");
+
+x=prompt("Nombre ", "");
+y=prompt("CodigoUser ", "");
+
+if (x!=null && x != "" && y!=null) {
+  document.write("<p>Hola " + x + "</p>");
+  document.write("<p>Hola " + y + "</p>");
+}
+else
+  document.write("<code> Nombre no válido </code>");
+
+</script>
+</body>
+</html>

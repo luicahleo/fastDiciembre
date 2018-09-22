@@ -1,0 +1,16 @@
+p {
+  background-color: silver;
+  color: blue;
+}
+
+.margen {
+  border: double;
+  margin: 3em;
+  /* background-color: yellow; */
+  background-image: url("logocss.gif");
+}
+.relleno {
+  border: dotted;
+  padding: 3em;
+  background-color: yellow;
+}

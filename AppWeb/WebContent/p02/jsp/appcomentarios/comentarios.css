@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+#titulo {
+	float: right;
+	color: #DB0;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	border-top: 2px solid #800;
+	border-bottom: 2px solid #800;
+}
+
+hr {
+	color: #800;
+}
+
+
+#texto {
+	width: 100%;
+}
+
+.info, .error {
+	border-radius:10px;
+	color:#FFF;
+	padding: 10px;
+}
+
+.info {
+	border:1px solid #3C0;
+	background-color:#0C0;
+}
+
+.error {
+	border:1px solid #F99;
+	background-color:#F00;
+}
+
+#resultadoEnvio {
+	float: right;
+	text-align:center;
+	clear: both;
+	visibility: hidden;
+}
+
+#cargando {
+	visibility: hidden;
+}
+
+#datos {
+	border: 1px solid #800;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.autor {
+	font-size: 0.75em;
+	font-style: italic;
+	font-weight: bold;
+	padding: 10px;
+	float: left;
+	color: #DB0
+}
+
+.fecha {
+	float: right;
+	font-size: 0.5em;
+	font-style: oblique;
+}
+
+.comentario {
+	display: block;
+	margin-top: 2em;
+}
+
+.divComentario {
+	border-radius:5px;
+	border: 2px dotted #800;
+	margin: 10px !important;
+	
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+function checkTime(i) // add a zero in front of numbers<10
+{
+if (i<10)
+    i="0" + i;
+return i;
+}
+
+function startTime()
+{
+ var today=new Date();
+ var h=today.getHours();
+ var m=today.getMinutes();
+ var s=today.getSeconds();
+
+ m=checkTime(m); // add a zero in front of numbers<10
+ s=checkTime(s); 
+ document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+
+ t=setTimeout(function(){startTime()},500);
+}
+
+
+</script>
+</head>
+<body onload="startTime()">
+<p> Hora local:     
+<span id="txt"></span>
+<p>
+La función <code> startTime() </code> se invoca al cargarse la página, muestra la hora 
+e invoca a <code> setTimeout(function(){startTime()},500); </code> 
+para que  se repita períodicamente.
+
+</p>
+</body>
+</html> 

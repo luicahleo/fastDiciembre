@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> 162: Ajax y xml</title>
+<script>
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,x,xx,i;
+xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Title</th><th>Artist</th><th>Year</th></tr>";
+    x=xmlhttp.responseXML.getElementsByTagName("CD");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("TITLE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      xx=x[i].getElementsByTagName("ARTIST");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        xx=x[i].getElementsByTagName("YEAR");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<h1> Obtiene listado de CDs  </h1>
+<p> consulta cd_catalog.xml sustituye entre líneas con fichero. </p>
+<hr/>
+
+<div id="txtCDInfo" style="float:left; width:45%;">
+<button onclick="loadXMLDoc('cd_catalog.xml')">
+  Get CD info</button>
+</div>
+
+<div style="float:left; width:45%;" >
+<h1> Sección a la derecha de zona Ajax  </h1>
+<p> El resto de la página no se modifica </p>
+<hr/>
+</div>
+</body>
+</html>

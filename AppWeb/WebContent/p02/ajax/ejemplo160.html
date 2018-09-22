@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hola Mundo con AJAX</title>
+<script>
+"use strict";
+function loadTextDoc(url) {
+  var xmlhttp;
+  var txt;
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      txt = xmlhttp.responseText; // alert(txt);
+      document.getElementById('Info').innerHTML = txt;
+    }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<h3 id="ppal"> Sección principal</h3>
+<p> En esta página hay un bloque div con id="info". Al pulsar el botón se genera una petición aśincrona de ese fichero.
+El contenido del mismo se inserta en el objeto div on id=""info". <br/>
+
+<div id="Info" style="height: 100px; background-color: grey;" onclick="loadTextDoc('HolaMundo.txt')" >
+<button>
+  Carga contenido de Holamundo.txt en este div </button>
+</div>
+
+<h3> pie de página</h3>
+<script type="text/javascript">
+"use strict";
+document.write(Date());
+</script>
+<br/> Observe que si recarga la página en el navegador la hora previa va cambiando. 
+En cambio, si pulsa sobre el botón esa hora no cambia  porque la página no se recarga.
+</p>
+
+</body>
+</html>
+  
+
+

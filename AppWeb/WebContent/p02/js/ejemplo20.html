@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Método 1</title> 
+ <script type="text/javascript">
+"use strict";
+function calculaPrecioTotal(precio, porcentajeImpuestos) {
+  var gastosEnvio = 10;
+  var precioConImpuestos = (1 + porcentajeImpuestos/100) * precio;
+  var precioTotal = precioConImpuestos + gastosEnvio;
+  return precioTotal.toFixed(2);
+}
+ </script> 
+</head>
+<body>
+
+<script type="text/javascript">
+"use strict";
+var precioTotal = calculaPrecioTotal(100,16);
+// var precioTotal = calculaPrecioTotal(prompt("precio", 100), prompt("IVA", 16));
+document.write("Precio total de 100 con 16% impuestos y gastos envio: ", precioTotal);
+</script> 
+</body>
+</html>

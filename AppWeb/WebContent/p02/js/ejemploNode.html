@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+<img id="miImagen" alt="Falta imagen" src="flores.jpg" width="150" height="113">
+
+<p>Pulse el botón para mostrar nodeName y nodeValue de distintas partes.</p>
+
+<button onclick="muestraProp()">Pruebe a pulsar</button>
+
+<p id="vacio"></p>
+
+<script>
+"use strict";
+function muestraProp() {
+    var x = document.getElementById("miImagen");
+    var y = document.getElementsByTagName("button")[0];
+    var z = y.childNodes;
+    var txt =  "y.nodeName="  +y.nodeName  + "<br>";
+    txt = txt+ "y.nodeValue=" +y.nodeValue + "<br>";
+    txt = txt+ "z.nodeName="  +z.nodeName  + "<br>";
+    txt = txt+ "z.nodeValue=" +z.nodeValue + "<br>";
+    txt = txt+ "x.nodeName="  +x.nodeName  + "<br>";
+    txt = txt+ "x.nodeValue=" +x.nodeValue + "<br>";
+    var i;
+    for (i = 0; i < x.attributes.length; i++) {
+        txt = txt + x.attributes[i].nodeName + " = " + x.attributes[i].nodeValue + "<br>";
+    }
+    document.getElementById("vacio").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

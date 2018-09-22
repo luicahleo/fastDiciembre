@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+function checkTime(i) // add a zero in front of numbers<10
+{
+if (i<10)
+    i="0" + i;
+return i;
+}
+
+function muestrahora()
+{
+ var today=new Date();
+ var h=today.getHours();
+ var m=checkTime( today.getMinutes());
+ var s=checkTime(today.getSeconds());
+ 
+ document.getElementById('txt').innerHTML = h +":"+m+":"+s;
+ 
+}
+function arrancatimer()
+{
+  muestrahora();
+  timer=setInterval(muestrahora,500);
+}
+function mifuncion()
+{
+  clearInterval(timer);	
+}
+function mifuncion1()
+{
+  arrancatimer();	
+}
+//COMO PONGO STARY Y STOP EN EL MISMO BOTON ????????????????????????????
+</script>
+</head>
+<body onload="arrancatimer()">
+<p> Hora local:     
+<span id="txt"></span>
+<p>
+La función <code> startTime() </code> se invoca al cargarse la página (se asocia su ejecución al evento onload del elemento body).
+</p>
+<p>
+Esta función primero muestra la hora e invoca a <code> setTimeout(function(){startTime()},500); </code> 
+para que  se repita periódicamente.
+
+</p>
+<button onclick="mifuncion()" ondblclick="mifuncion1()">start/stop</button>
+<!-- <button onclick="mifuncion1()">start</button> -->
+
+</body>
+</html> 

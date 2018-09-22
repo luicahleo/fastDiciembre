@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+"use strict";
+function CambiaTexto() {
+  document.getElementById("s1").innerHTML=document.baseURI;
+  document.getElementById("s2").innerHTML=document.documentURI;
+  document.getElementById("s3").innerHTML=document.domain;
+  document.getElementById("s4").innerHTML=document.URL;
+  document.getElementById("s5").innerHTML=document.referrer;
+}
+</script>
+</head>
+<body>
+
+<p> document.baseURI: <span id="s1"></span></p>
+<p> document.documentURI: <span id="s2"></span></p>
+<p> document.domain: <span id="s3"></span></p>
+<p> document.URL: <span id="s4"></span></p>
+<p> document.referrer: <span id="s5"></span></p>
+
+<input type="button" onclick="CambiaTexto()" value="Llama a CambiaTexto" />
+
+</body>
+</html> 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> ejemplo valida form 2</title>
+
+<script>
+"use strict";
+function validaForm() {
+    var x = document.forms["miForm"]["fc"].value;
+    if (x != "azul") {
+        alert("Clave incorrecta");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="miForm" action=""
+onsubmit="return validaForm()" method="post">
+<label for="c1">Nombre usuario: </label>
+<input type="text" id="c1" name="fn" required="required">
+<label for="c2">Clave (color del cielo): </label>
+<input type="text" id="c2" name="fc">
+<input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

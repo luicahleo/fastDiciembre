@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="Tprecio">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="Tanuncio">
+    <xs:sequence>
+      <xs:element name="fecha" type="xs:date" />
+      <xs:element name="asunto" type="xs:string" />
+      <xs:element name="texto" type="xs:string" />
+      <xs:element name="precio" type="Tprecio" />
+      <xs:element name="contacto" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="codigo" type="xs:string"/>
+    <xs:attribute name="vendido" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="Ttablon">
+    <xs:sequence>
+      <xs:element name="anuncio" type="Tanuncio" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="tablon" type="Ttablon" />
+  
+</xs:schema>
